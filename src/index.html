@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/Icon.png" />
+    <title>Scavenger</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="content">
+        <!--LINKS AND WEATHER INFORMATION-->
+        <section class="display-one">
+          <div class="links">
+            <button type="button" class="link-button">Links</button>
+            <img
+              src="/icons/search.png"
+              class="search-icon"
+              alt="Search Icon"
+            />
+          </div>
+          <div class="mobile-weather">
+            <p class="weather-info">23 <sup>&deg;</sup></p>
+            <p class="location">Kampala</p>
+          </div>
+          <div class="mobile-todo"></div>
+          <div class="desktop-weather">
+            <div class="weather">
+              <img
+                src="/icons/cloudy.png"
+                class="cloud-icon"
+                alt="Cloudy Icon"
+              />
+              <p class="weather-info">23</p>
+              <p><sup class="degree">&deg;</sup></p>
+            </div>
+            <p class="location">Kampala</p>
+          </div>
+        </section>
+        <!--TIME-->
+        <section class="time-container">
+          <p class="time">20:45</p>
+          <p class="greeting">Good evening, Joel.</p>
+        </section>
+        <!--FOCUS-->
+        <section class="focus">
+          <p class="focus-question">What is your main focus for today?</p>
+          >
+          <div class="focus-input">
+            <input class="user-input" type="text" />
+          </div>
+        </section>
+        <!--SETTINGS QUOTE TODO-->
+        <section class="display-two">
+          <div class="setting">
+            <button type="button" class="settings">
+              <img
+                src="/icons/settings.png"
+                class="settings-icon"
+                alt="Search Icon"
+              />
+            </button>
+            <div>
+              <p class="pic-description">Japanese Temple</p>
+              <p class="pic-description-2">Kurt / Unsplash</p>
+            </div>
+          </div>
+          <div class="quote">
+            <p class="the-quote">
+              "Incredible things can be done simply if we are committed to
+              making happen"
+            </p>
+          </div>
+          <div class="desktop-todo">
+            <button type="button" class="todo-section">Todo</button>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+  <script src="app.js"></script>
+</html>
