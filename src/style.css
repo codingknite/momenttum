@@ -129,7 +129,7 @@ LINK ITEMS
 ADD NEW LINK ITEM
 *****************/
 .item-info {
-  visibility: visible; /*Display With Javascrip*/
+  visibility: hidden; /*Display With Javascrip*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
