@@ -24,6 +24,33 @@
               alt="Search Icon"
             />
           </div>
+          <!--LINK ITEMS-->
+          <div class="box-one">
+            <div class="link">
+              <img class="link-icon" src="/icons/link.png" alt="" />
+              <p class="link-item">Google</p>
+            </div>
+
+            <div class="add-new-item">
+              <img
+                class="new-item-icon"
+                src="/icons/plus.png"
+                alt="Add New Item"
+              />
+              <p class="new-item">New Link</p>
+            </div>
+          </div>
+
+          <!--ADD NEW ITEM-->
+          <div class="item-info">
+            <img class="arrow-icon" src="/icons/arrow.png" alt="Go Back" />
+            <p class="link-name">NAME</p>
+            <input class="link-name-input" type="text" />
+            <p class="link-url">LINKS</p>
+            <input class="url-input" type="text" placeholder="example.com" />
+            <button type="button" class="submit-link">Create</button>
+          </div>
+
           <div class="mobile-weather">
             <p class="weather-info">23 <sup>&deg;</sup></p>
             <p class="location">Kampala</p>
@@ -42,15 +69,38 @@
             <p class="location">Kampala</p>
           </div>
         </section>
+
         <!--TIME-->
         <section class="time-container">
-          <p class="time">20:45</p>
-          <p class="greeting">Good evening, Joel.</p>
+          <div class="display-time">
+            <p class="time">18:35</p>
+            <!--DISPLAY TIME IN PERCENTAGE-->
+            <!-- <p class="time-percentage">48<span class="percentage">%</span></p> -->
+            <img src="/icons/more.png" alt="Menu Button" class="more-button" />
+          </div>
+
+          <!--SHOW PERCENTAGE-->
+          <!-- <div class="show-percentage">
+            <p class="percentage-message">Percent Clock</p>
+            <p class="percentage-caption">
+              See Today's progress as a percentage
+            </p>
+          </div> -->
+
+          <div>
+            <p class="greeting-before">
+              Good afternoon,<input
+                type="text"
+                class="user-name"
+                placeholder="Name"
+              />.
+            </p>
+            <p class="greeting-after">Good afternoon, Joel.</p>
+          </div>
         </section>
         <!--FOCUS-->
         <section class="focus">
           <p class="focus-question">What is your main focus for today?</p>
-          >
           <div class="focus-input">
             <input class="user-input" type="text" />
           </div>
@@ -66,7 +116,7 @@
               />
             </button>
             <div>
-              <p class="pic-description">Japanese Temple</p>
+              <p class="pic-description">Gloomy Clouds</p>
               <p class="pic-description-2">Kurt / Unsplash</p>
             </div>
           </div>
