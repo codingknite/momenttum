@@ -24,12 +24,65 @@
               alt="Search Icon"
             />
           </div>
-          <!--LINK ITEMS-->
+          <!--LINKS DISPLAY-->
           <div class="box-one">
             <div class="link">
-              <img class="link-icon" src="/icons/link.png" alt="" />
+              <svg
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 16 16"
+                class="bi bi-link-45deg"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"
+                />
+                <path
+                  d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"
+                />
+              </svg>
               <p class="link-item">Google</p>
             </div>
+
+            <div class="link">
+              <svg
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 16 16"
+                class="bi bi-link-45deg"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"
+                />
+                <path
+                  d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"
+                />
+              </svg>
+              <p class="link-item">Instagram</p>
+            </div>
+
+            <!--LINK ITEMS-->
+            <!-- <div class="link">
+              <svg
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 16 16"
+                class="bi bi-link-45deg"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"
+                />
+                <path
+                  d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"
+                />
+              </svg>
+              <p class="link-item">Instagram</p>
+            </div> -->
 
             <div class="add-new-item">
               <img
@@ -41,9 +94,22 @@
             </div>
           </div>
 
-          <!--ADD NEW ITEM-->
+          <!--ADD NEW LINK-->
           <div class="item-info">
-            <img class="arrow-icon" src="/icons/arrow.png" alt="Go Back" />
+            <svg
+              class="back-button"
+              width="1.3em"
+              height="1.3em"
+              viewBox="0 0 16 16"
+              class="bi bi-arrow-left"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+              />
+            </svg>
             <p class="link-name">NAME</p>
             <input class="link-name-input" type="text" />
             <p class="link-url">LINKS</p>
@@ -51,11 +117,6 @@
             <button type="button" class="submit-link">Create</button>
           </div>
 
-          <div class="mobile-weather">
-            <p class="weather-info">23 <sup>&deg;</sup></p>
-            <p class="location">Kampala</p>
-          </div>
-          <div class="mobile-todo"></div>
           <div class="desktop-weather">
             <div class="weather">
               <img
@@ -73,19 +134,31 @@
         <!--TIME-->
         <section class="time-container">
           <div class="display-time">
-            <p class="time">18:35</p>
+            <div class="time">18:35</div>
+
             <!--DISPLAY TIME IN PERCENTAGE-->
-            <!-- <p class="time-percentage">48<span class="percentage">%</span></p> -->
-            <img src="/icons/more.png" alt="Menu Button" class="more-button" />
+            <div class="time-percentage">
+              48<span class="percentage">%</span>
+            </div>
+
+            <div class="time-in-percent">
+              <img
+                src="/icons/more.png"
+                alt="Menu Button"
+                class="more-button"
+              />
+              <div class="show-percentage">
+                <div class="percentage-menu">
+                  <p class="percentage-message">Percent Clock</p>
+                  <p class="percentage-caption">
+                    See Today's progress as a percentage.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!--SHOW PERCENTAGE-->
-          <!-- <div class="show-percentage">
-            <p class="percentage-message">Percent Clock</p>
-            <p class="percentage-caption">
-              See Today's progress as a percentage
-            </p>
-          </div> -->
 
           <div>
             <p class="greeting-before">
@@ -105,6 +178,17 @@
             <input class="user-input" type="text" />
           </div>
         </section>
+        <section class="after-focus-added">
+          <img
+            src="/icons/checkbox.png"
+            alt="CheckBox"
+            class="complete-task-icon"
+          />
+          <p class="focus-question">What is your main focus for today?</p>
+          <img src="/icons/cancel.png" class="cancel-task hidden-icon" />
+          <img src="/icons/plus.png" class="add-new-task current-icon" />
+        </section>
+
         <!--SETTINGS QUOTE TODO-->
         <section class="display-two">
           <div class="setting">
