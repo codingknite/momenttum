@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container">
-      <section class="content">
+    <main>
+      <div class="content">
         <!--LINKS AND WEATHER INFORMATION-->
-        <section class="display-one">
+        <div class="display-one">
           <div class="links">
             <button type="button" class="link-button">Links</button>
             <img
@@ -28,6 +28,7 @@
           <div class="box-one">
             <div class="link">
               <svg
+                class="link-icon"
                 width="1.5em"
                 height="1.5em"
                 viewBox="0 0 16 16"
@@ -47,6 +48,7 @@
 
             <div class="link">
               <svg
+                class="link-icon"
                 width="1.5em"
                 height="1.5em"
                 viewBox="0 0 16 16"
@@ -129,10 +131,9 @@
             </div>
             <p class="location">Kampala</p>
           </div>
-        </section>
+        </div>
 
-        <!--TIME-->
-        <section class="time-container">
+        <div class="time-container">
           <div class="display-time">
             <div class="time">18:35</div>
 
@@ -158,8 +159,6 @@
             </div>
           </div>
 
-          <!--SHOW PERCENTAGE-->
-
           <div>
             <p class="greeting-before">
               Good afternoon,<input
@@ -170,27 +169,26 @@
             </p>
             <p class="greeting-after">Good afternoon, Joel.</p>
           </div>
-        </section>
+        </div>
         <!--FOCUS-->
-        <section class="focus">
+        <div class="focus">
           <p class="focus-question">What is your main focus for today?</p>
           <div class="focus-input">
             <input class="user-input" type="text" />
           </div>
-        </section>
-        <section class="after-focus-added">
+        </div>
+        <div class="after-focus-added">
           <img
             src="/icons/checkbox.png"
             alt="CheckBox"
             class="complete-task-icon"
           />
-          <p class="focus-question">What is your main focus for today?</p>
-          <img src="/icons/cancel.png" class="cancel-task hidden-icon" />
-          <img src="/icons/plus.png" class="add-new-task current-icon" />
-        </section>
+          <p class="focus-question">Finish Havards CS50 Today</p>
+          <img src="/icons/cancel.png" class="cancel-task current-icon" />
+          <img src="/icons/plus.png" class="add-new-task hidden-icon" />
+        </div>
 
-        <!--SETTINGS QUOTE TODO-->
-        <section class="display-two">
+        <div class="display-two">
           <div class="setting">
             <button type="button" class="settings">
               <img
@@ -211,10 +209,62 @@
             </p>
           </div>
           <div class="desktop-todo">
+            <div class="todo-container">
+              <div class="todo-today">Today</div>
+              <div class="no-todos">
+                <div class="no-todos-today">No todos yet</div>
+                <button type="button" class="add-todo-task">New Todo</button>
+              </div>
+              <div class="task-input">
+                <input
+                  type="text"
+                  class="new-todo-task"
+                  placeholder="New Todo"
+                />
+              </div>
+
+              <div class="todo-tasks">
+                <img
+                  src="/icons/checkbox.png"
+                  alt="Todo Checkbox"
+                  class="finish-task"
+                />
+                <img
+                  src="/icons/check.png"
+                  alt="Completed Todo"
+                  class="finished-task"
+                />
+                <div class="todo-task">Finish Eloquent JavaScript</div>
+                <img
+                  src="/icons/cancel.png"
+                  alt="Cancel Task"
+                  class="remove-task"
+                />
+              </div>
+
+              <!-- <div class="todo-tasks">
+                <img
+                  src="/icons/checkbox.png"
+                  alt="Todo Checkbox"
+                  class="finish-task"
+                />
+                <img
+                  src="/icons/check.png"
+                  alt="Completed Todo"
+                  class="finished-task"
+                />
+                <div class="todo-task">Finish Eloquent JavaScript</div>
+                <img
+                  src="/icons/cancel.png"
+                  alt="Cancel Task"
+                  class="remove-task"
+                />
+              </div> -->
+            </div>
             <button type="button" class="todo-section">Todo</button>
           </div>
-        </section>
-      </section>
+        </div>
+      </div>
     </main>
   </body>
   <script src="app.js"></script>
