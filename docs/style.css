@@ -1,0 +1,1236 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/*****************************
+USER INTERFACE
+*****************************/
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url(/images/img-2.jfif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 100%;
+  height: 100vh;
+}
+
+:root {
+  --main-font: Arial, Helvetica, sans-serif;
+  --main-color: white;
+}
+
+/*******************
+UPPER SECTION
+********************/
+
+.display-one {
+  padding: 12px;
+  height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  width: 100px;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-button {
+  border: none;
+  background: none;
+  outline: none;
+  font-family: var(--main-font);
+  color: var(--main-color);
+  font-size: 17px;
+  cursor: pointer;
+  padding-left: 10px;
+}
+.search-icon {
+  width: 20px;
+}
+
+/***************
+LINK ITEMS
+****************/
+.box-one {
+  visibility: hidden; /*Display In JavaScript*/ /*Auto Adjust Height*/
+  width: 220px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(5, 5, 5);
+  color: var(--main-color);
+  font-family: var(--main-font);
+  padding: 20px;
+  position: absolute;
+  top: 7vh;
+  opacity: 0.85;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.link {
+  display: flex;
+  opacity: 0.8;
+  margin: 5px;
+}
+
+.link:hover {
+  opacity: 1;
+  color: var(--main-color);
+}
+
+.link-item {
+  align-self: center;
+  font-size: 17.5px;
+  margin-left: 10px;
+}
+
+.add-new-item {
+  display: flex;
+  opacity: 0.8;
+  margin: 10px;
+}
+.add-new-item:hover {
+  opacity: 1;
+}
+.new-item-icon {
+  width: 10%;
+  height: 100%;
+  opacity: 0.7;
+}
+
+.new-item {
+  margin-left: 10px;
+  opacity: 0.7;
+}
+
+/*****************
+ADD NEW LINK ITEM
+*****************/
+.item-info {
+  visibility: hidden; /*Display With Javascrip*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 250px;
+  background-color: rgba(5, 5, 5, 0.829);
+  color: var(--main-color);
+  font-family: var(--main-font);
+  padding: 20px;
+  margin: 5px;
+  position: absolute;
+  top: 7vh;
+  opacity: 0.85;
+  border-radius: 3px;
+}
+
+.back-button {
+  cursor: pointer;
+  padding: 0.1em;
+}
+
+.back-button:hover {
+  background: rgba(128, 128, 128, 0.719);
+  border-radius: 50%;
+}
+
+.link-name,
+.link-url {
+  font-size: 13px;
+}
+.link-name-input,
+.url-input {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  font-size: 10px;
+  padding: 3px;
+  position: relative;
+  bottom: 6%;
+}
+
+.submit-link {
+  outline: none;
+  border: none;
+  width: 100px;
+  border-radius: 20px;
+  background: gray;
+  padding: 10px;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.submit-link:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/****************
+WEATHER SECTION
+*****************/
+.desktop-weather {
+  color: var(--main-color);
+  font-family: var(--main-font);
+  width: 100px;
+}
+
+.weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.cloud-icon {
+  max-width: 40%;
+  margin-right: 7px;
+}
+.weather-info {
+  font-size: 28px;
+  font-weight: 200;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.degree {
+  font-size: 22px;
+}
+
+.location {
+  font-size: 13px;
+  text-align: center;
+}
+
+/*********************
+DISPLAY TIME SECTION
+**********************/
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 30vh;
+  margin-top: 11.25em;
+}
+
+.display-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time,
+.time-percentage {
+  margin-left: 3%;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 164px;
+}
+
+.time-percentage {
+  display: none;
+}
+
+.percentage {
+  color: var(--main-color);
+  font-size: 45px;
+  padding: 1px;
+}
+
+.time-in-percent {
+  visibility: hidden;
+  display: flex;
+  position: relative;
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
+
+.show-percentage {
+  position: absolute;
+  width: 15.5em;
+  height: 4.3em;
+  padding: 10px;
+  top: 2.2em;
+  left: 2em;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.733);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.percentage-message {
+  font-size: 1em;
+  line-height: 1.8em;
+}
+
+.percentage-caption {
+  font-size: 0.8em;
+}
+
+.percentage-menu {
+  padding: 0.1em;
+}
+
+.percentage-menu:hover {
+  background: rgba(128, 128, 128, 0.664);
+  border-radius: 3px;
+}
+
+.more-button {
+  width: 2em;
+  height: 2em;
+  margin-left: 1em;
+  padding: 0.25em;
+  cursor: pointer;
+}
+
+.more-button:hover {
+  background: rgba(168, 164, 164, 0.26);
+  border-radius: 50%;
+}
+
+.greeting-before,
+.greeting-after {
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 52px;
+}
+
+.greeting-after {
+  display: none;
+}
+.user-name {
+  border: none;
+  background: none;
+  outline: none;
+  text-align: center;
+  width: 150px;
+  border-bottom: 1px solid white;
+  color: var(--main-color);
+  font-size: 50px;
+}
+
+.user-name::placeholder {
+  font-family: var(--main-font);
+  font-size: 50px;
+}
+
+/*******************
+DISPLAY FOCUS SECTION
+********************/
+.focus,
+.after-focus-added {
+  position: relative;
+  bottom: 40px;
+}
+
+.focus {
+  display: block; /*Switch To Display None */
+}
+
+.focus-question {
+  color: var(--main-color);
+  font-family: var(--main-font);
+  text-align: center;
+  font-size: 35px;
+}
+
+.focus-input {
+  text-align: center;
+}
+
+.user-input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid white;
+  width: 550px;
+  background: none;
+  padding: 5px;
+  color: var(--main-color);
+  font-size: 32px;
+  text-align: center;
+}
+
+.after-focus-added {
+  display: none; /* Switch To Display Flex In JavaScript */
+  justify-content: center;
+  align-items: center;
+}
+
+.after-focus-added:hover .complete-task-icon {
+  visibility: visible;
+}
+
+.after-focus-added:hover .current-icon {
+  visibility: visible;
+  border-radius: 50%;
+}
+.current-icon:hover {
+  background: rgba(128, 128, 128, 0.664);
+}
+
+.hidden-icon {
+  display: none;
+}
+
+.complete-task-icon {
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 1em;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.cancel-task,
+.add-new-task {
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 1em;
+  cursor: pointer;
+  margin-top: 2px;
+  padding: 0.2em;
+  visibility: hidden;
+}
+
+/*********************
+BOTTOM SECTION
+**********************/
+
+.display-two {
+  display: flex;
+  justify-content: space-between;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  padding: 10px;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 150px;
+  font-family: var(--main-font);
+}
+
+.settings {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  opacity: 0.7;
+}
+
+.settings:hover {
+  opacity: 1;
+}
+.settings-icon {
+  width: 20px;
+}
+
+.pic-description {
+  font-size: 12px;
+}
+
+.pic-description-2 {
+  font-size: 12px;
+  text-align: center;
+}
+
+.quote {
+  width: 500px;
+}
+.the-quote {
+  width: 390px;
+  text-align: center;
+  font-size: 19px;
+}
+
+.desktop-todo {
+  position: relative;
+  padding: 10px;
+}
+
+.todo-section {
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.todo-container {
+  background: rgba(5, 5, 5, 0.829);
+  width: 20em;
+  height: 16em; /*Find a way to auto adjust height*/
+  position: absolute;
+  bottom: 3em;
+  right: 0.5em;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /*Change to none when displaying todo tasks*/
+  visibility: hidden; /*Change to vsisble with JS*/
+}
+
+.todo-today {
+  font-size: 1.2em;
+  margin: 0.8em;
+}
+
+.no-todos {
+  align-self: center;
+  display: flex; /*Change Display To none In JS when new item has been added*/
+  flex-direction: column;
+}
+
+.no-todos-today {
+  font-size: 1em;
+  margin: 0.5em;
+}
+
+.add-todo-task {
+  outline: none;
+  border: none;
+  align-self: center;
+  width: 8.5em;
+  padding: 0.6em;
+  border-radius: 17px;
+  background: rgba(128, 128, 128, 0.74);
+  cursor: pointer;
+}
+
+.task-input {
+  display: block; /*Change Display To none In JS when new item has been added*/
+}
+
+.add-todo-task:hover {
+  background: rgb(128, 128, 128);
+}
+
+.new-todo-task {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.8em;
+  font-size: 1em;
+}
+
+.todo-tasks {
+  display: flex;
+  align-items: center;
+  margin: 0.3em;
+}
+
+.todo-task {
+  text-align: left;
+}
+
+.finish-task,
+.finished-task,
+.remove-task {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.finished-task {
+  display: none;
+}
+
+.remove-task {
+  padding: 0.2em;
+  margin-left: 0.5em;
+  visibility: hidden;
+}
+
+.remove-task:hover {
+  border-radius: 50%;
+  background: rgba(128, 128, 128, 0.74);
+}
+
+.todo-tasks:hover .remove-task {
+  visibility: visible;
+}
+
+/***********************************************************
+**** RESPONSIVE DEISGN
+************************************************************/
+
+/**********************
+Tablets
+***********************/
+
+@media screen and (max-width: 768px) {
+  /**********************
+  Time Section
+  ***********************/
+
+  .time,
+  .time-percentage {
+    font-size: 122px;
+  }
+
+  .time-percentage {
+    display: none;
+  }
+
+  .percentage {
+    font-size: 25px;
+  }
+
+  .time-in-percent {
+    visibility: visible;
+  }
+
+  .show-percentage {
+    visibility: hidden;
+    width: 11em;
+    height: 4em;
+    top: -3.2em;
+    left: 3em;
+  }
+
+  .percentage-message {
+    font-size: 0.8;
+  }
+
+  .percentage-caption {
+    font-size: 0.55em;
+  }
+
+  .greeting-before,
+  .greeting-after {
+    font-size: 52px;
+  }
+
+  .user-name {
+    text-align: center;
+    width: 100px;
+    font-size: 50px;
+  }
+
+  .user-name::placeholder {
+    font-size: 30px;
+  }
+}
+
+/* MOBILE DEVICES*/
+
+@media screen and (max-width: 767px) {
+  /****************
+  Upper Section
+  *****************/
+  .display-one {
+    padding: 10px;
+    height: 10vh;
+  }
+
+  .link-button {
+    font-size: 1.2em;
+    padding-left: 0.5em;
+  }
+
+  .search-icon {
+    width: 1.1em;
+  }
+
+  /***************
+  Link Items
+  ****************/
+  .box-one {
+    width: 150px;
+    height: 100px;
+    display: flex;
+    padding: 10px;
+    position: absolute;
+    top: 7.5vh;
+  }
+
+  .link {
+    display: flex;
+    opacity: 0.8;
+    margin: 2px;
+  }
+
+  .link-item {
+    font-size: 15px;
+    margin-left: 5px;
+  }
+
+  .add-new-item {
+    font-size: 15px;
+    margin: 5px;
+  }
+
+  .new-item-icon {
+    width: 1em;
+    height: 1em;
+  }
+
+  .new-item {
+    margin-left: 10px;
+    opacity: 0.7;
+  }
+
+  .link-icon {
+    width: 1em;
+  }
+
+  /*****************
+  Add new link item
+  *****************/
+
+  .item-info {
+    width: 180px;
+    height: 200px;
+    padding: 20px;
+    margin: 5px;
+    position: absolute;
+    top: 7vh;
+    opacity: 0.85;
+    border-radius: 3px;
+  }
+
+  .back-button {
+    padding: 0.1em;
+  }
+
+  .link-name-input,
+  .url-input {
+    font-size: 15px;
+    padding: 1px;
+    bottom: 5%;
+  }
+
+  .submit-link {
+    padding: 5px;
+    font-size: 15px;
+  }
+  /**************
+  Weather Display
+  ***************/
+  .weather {
+    padding-top: 10px;
+  }
+
+  .cloud-icon {
+    width: 1.8em;
+  }
+  .weather-info {
+    font-size: 1.3em;
+  }
+
+  .degree {
+    font-size: 1.2em;
+  }
+
+  .location {
+    font-size: 0.9em;
+  }
+
+  /**********************
+  Time Section
+  ***********************/
+
+  .time-container {
+    margin-top: 6.25em;
+  }
+
+  .time,
+  .time-percentage {
+    margin-left: 0.5em;
+    font-size: 58px;
+  }
+
+  .time-percentage {
+    display: none;
+  }
+
+  .percentage {
+    font-size: 25px;
+  }
+
+  .time-in-percent {
+    visibility: visible;
+  }
+
+  .show-percentage {
+    visibility: hidden;
+    width: 5em;
+    height: 2.3em;
+    padding: 5px;
+    top: -2.5em;
+    left: 0em;
+  }
+
+  .percentage-message {
+    font-size: 0.5em;
+    line-height: 1em;
+  }
+
+  .percentage-caption {
+    font-size: 0.3em;
+  }
+
+  .percentage-menu {
+    padding: 0.1em;
+  }
+
+  .more-button {
+    width: 1.2em;
+    height: 1.2em;
+    margin-left: 0;
+  }
+
+  .greeting-before,
+  .greeting-after {
+    font-size: 25px;
+  }
+
+  .user-name {
+    text-align: center;
+    width: 60px;
+    font-size: 25px;
+  }
+
+  .user-name::placeholder {
+    font-size: 18px;
+  }
+
+  /*********************
+  Display Focus
+  **********************/
+
+  .focus,
+  .after-focus-added {
+    position: relative;
+    bottom: 20px;
+  }
+
+  .focus {
+    display: block; /*Switch To Display None */
+  }
+
+  .focus-question {
+    font-size: 19px;
+  }
+
+  .focus-input {
+    text-align: center;
+  }
+
+  .user-input {
+    width: 250px;
+    padding: 3px;
+    font-size: 18px;
+  }
+
+  .after-focus-added {
+    display: none; /* Switch To Display Flex In JavaScript */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .current-icon {
+    background: none;
+    border-radius: 50%;
+    padding: 0.1em;
+  }
+  .after-focus-added:hover .current-icon {
+    border-radius: 50%;
+  }
+  .current-icon:hover {
+    background: rgba(128, 128, 128, 0.664);
+  }
+
+  .hidden-icon {
+    display: none;
+  }
+
+  .complete-task-icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.35em;
+    visibility: visible;
+  }
+
+  .cancel-task,
+  .add-new-task {
+    width: 1em;
+    height: 1em;
+    margin-left: 0.35em;
+    margin-top: 2px;
+    padding: 0.2em;
+    visibility: visible;
+  }
+
+  /***********************
+  Bottom Part
+  ************************/
+
+  .setting {
+    width: 250px;
+  }
+
+  .settings {
+    opacity: 1;
+  }
+
+  .settings-icon {
+    width: 1.5em;
+  }
+
+  .pic-description {
+    font-size: 6px;
+  }
+
+  .pic-description-2 {
+    font-size: 6px;
+  }
+
+  .quote {
+    width: 500px;
+  }
+  .the-quote {
+    width: 150px;
+    font-size: 10px;
+  }
+
+  .todo-container {
+    background: rgb(5, 5, 5);
+    width: 15em;
+    height: 13em; /*Find a way to auto adjust height*/
+    bottom: 2.5em;
+    right: 1.5em;
+    justify-content: space-between; /*Change to none when displaying todo tasks*/
+    visibility: hidden; /*Change to vsisble with JS*/
+  }
+
+  .todo-today {
+    font-size: 1em;
+    margin: 0.8em;
+  }
+
+  .no-todos {
+    align-self: center;
+    display: flex; /*Change Display To none In JS when new item has been added*/
+    flex-direction: column;
+  }
+
+  .no-todos-today {
+    font-size: 0.8em;
+    text-align: center;
+    margin: 0.5em;
+  }
+
+  .add-todo-task {
+    width: 7em;
+  }
+
+  .task-input {
+    display: block; /*Change Display To none In JS when new item has been added*/
+  }
+
+  .todo-tasks {
+    margin: 0.3em;
+    display: none; /*Change With JavaScript*/
+  }
+
+  .todo-task {
+    font-size: 0.8em;
+  }
+
+  .finish-task,
+  .finished-task,
+  .remove-task {
+    margin-right: 0.5em;
+  }
+
+  .remove-task {
+    margin-left: 0.5em;
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /**********************
+  Time Section
+  ***********************/
+
+  .time,
+  .time-percentage {
+    font-size: 70px;
+  }
+
+  .time-percentage {
+    display: none;
+  }
+
+  .percentage {
+    font-size: 25px;
+  }
+
+  .time-in-percent {
+    visibility: visible;
+  }
+
+  .show-percentage {
+    visibility: hidden;
+    width: 6em;
+    top: -2.2em;
+    left: 0.5em;
+  }
+
+  .percentage-message {
+    font-size: 0.55em;
+  }
+
+  .percentage-caption {
+    font-size: 0.45em;
+  }
+
+  .greeting-before,
+  .greeting-after {
+    font-size: 33px;
+  }
+
+  .user-name {
+    text-align: center;
+    width: 75px;
+    font-size: 25px;
+  }
+
+  .user-name::placeholder {
+    font-size: 22px;
+  }
+
+  /*********************
+  Display Focus
+  **********************/
+
+  .focus,
+  .after-focus-added {
+    bottom: 30px;
+  }
+
+  .focus-question {
+    font-size: 22px;
+  }
+
+  .user-input {
+    width: 260px;
+    font-size: 19px;
+  }
+
+  .complete-task-icon {
+    margin-right: 0.4em;
+  }
+
+  /***********************
+  Bottom Part
+  ************************/
+
+  .setting {
+    width: 150px;
+  }
+
+  .quote {
+    width: 400px;
+  }
+  .the-quote {
+    width: 200px;
+    font-size: 14px;
+    margin-left: 2em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .quote {
+    width: 500px;
+  }
+  .the-quote {
+    margin-left: 2em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /**********************
+  Time Section
+  ***********************/
+
+  .time,
+  .time-percentage {
+    font-size: 55px;
+  }
+
+  /***********************
+  Bottom Part
+  ************************/
+
+  .setting {
+    width: 150px;
+  }
+
+  .quote {
+    width: 400px;
+  }
+  .the-quote {
+    width: 150px;
+    font-size: 10px;
+    margin-left: 3em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /**********************
+    Time Section
+    ***********************/
+
+  .time-container {
+    margin-top: 6.25em;
+  }
+
+  .time,
+  .time-percentage {
+    margin-left: 0.5em;
+    font-size: 58px;
+  }
+
+  .percentage {
+    font-size: 25px;
+  }
+
+  .show-percentage {
+    visibility: hidden;
+    width: 5em;
+    height: 2.3em;
+    padding: 5px;
+    top: -2.5em;
+    left: 0em;
+  }
+
+  .percentage-message {
+    font-size: 0.5em;
+    line-height: 1em;
+  }
+
+  .percentage-caption {
+    font-size: 0.3em;
+  }
+
+  .percentage-menu {
+    padding: 0.1em;
+  }
+
+  .greeting-before,
+  .greeting-after {
+    font-size: 25px;
+  }
+
+  .user-name {
+    text-align: center;
+    width: 60px;
+    font-size: 25px;
+  }
+
+  .user-name::placeholder {
+    font-size: 18px;
+  }
+
+  /*********************
+    Display Focus
+    **********************/
+
+  .focus-question {
+    font-size: 19px;
+  }
+
+  .user-input {
+    width: 250px;
+    padding: 3px;
+    font-size: 18px;
+  }
+
+  .current-icon {
+    background: none;
+    border-radius: 50%;
+    padding: 0.1em;
+  }
+  .after-focus-added:hover .current-icon {
+    border-radius: 50%;
+  }
+  .current-icon:hover {
+    background: rgba(128, 128, 128, 0.664);
+  }
+
+  .hidden-icon {
+    display: none;
+  }
+
+  .complete-task-icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.35em;
+    visibility: visible;
+  }
+
+  .cancel-task,
+  .add-new-task {
+    width: 1em;
+    height: 1em;
+    margin-left: 0.35em;
+    margin-top: 2px;
+    padding: 0.2em;
+    visibility: visible;
+  }
+
+  /***********************
+    Bottom Part
+    ************************/
+
+  .setting {
+    width: 250px;
+  }
+
+  .settings-icon {
+    width: 1.5em;
+  }
+
+  .pic-description {
+    font-size: 6px;
+  }
+
+  .pic-description-2 {
+    font-size: 6px;
+  }
+}
