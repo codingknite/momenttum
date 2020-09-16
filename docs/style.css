@@ -32,6 +32,29 @@ main {
   --main-color: white;
 }
 
+/*
+GLOBAL CLASSES
+*/
+
+.display {
+  display: block;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.no-display {
+  display: none;
+}
+
+.show {
+  visibility: visible;
+}
+
+.no-show {
+  visibility: hidden;
+}
 /*******************
 UPPER SECTION
 ********************/
@@ -70,7 +93,6 @@ UPPER SECTION
 LINK ITEMS
 ****************/
 .box-one {
-  visibility: hidden; /*Display In JavaScript*/ /*Auto Adjust Height*/
   width: 13.7em;
   height: 8.125em;
   display: flex;
@@ -248,6 +270,10 @@ DISPLAY TIME SECTION
   align-items: center;
 }
 
+.display-time:hover .more-button {
+  visibility: visible;
+}
+
 .time,
 .time-percentage {
   margin-left: 3%;
@@ -274,7 +300,6 @@ DISPLAY TIME SECTION
 }
 
 .show-percentage {
-  visibility: hidden;
   position: absolute;
   width: 15.5em;
   height: 4.3em;
@@ -326,9 +351,6 @@ DISPLAY TIME SECTION
   font-size: 3.4rem;
 }
 
-.greeting-after {
-  display: none; /*Change to display none*/
-}
 .user-name {
   border: none;
   background: none;
@@ -352,10 +374,6 @@ DISPLAY FOCUS SECTION
 .after-focus-added {
   position: relative;
   top: 10em;
-}
-
-.focus {
-  display: block; /*Switch To Display None */
 }
 
 .focus-question {
@@ -491,7 +509,6 @@ BOTTOM SECTION
 }
 
 .todo-container {
-  visibility: hidden; /*Change to vsisble with JS*/
   position: absolute;
   bottom: 2em;
   right: 1em;
@@ -623,12 +640,7 @@ Large Screens
     top: 10em;
   }
 
-  .focus {
-    display: block; /*Switch To Display None */
-  }
-
   .after-focus-added {
-    display: none; /* Switch To Display Flex In JavaScript */
     justify-content: center;
     align-items: center;
   }
@@ -751,10 +763,6 @@ DISPLAY FOCUS SECTION
     top: 5em;
   }
 
-  .focus {
-    display: block; /*Switch To Display None */
-  }
-
   .focus-question {
     font-size: 1.8rem;
   }
@@ -766,7 +774,6 @@ DISPLAY FOCUS SECTION
   }
 
   .after-focus-added {
-    display: none; /* Switch To Display Flex In JavaScript */
     justify-content: center;
     align-items: center;
   }

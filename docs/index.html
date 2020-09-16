@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/images/Icon.png" />
     <title>Scavenger</title>
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
-    />
+    /> -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
       <div class="content">
-        <!--LINKS AND WEATHER INFORMATION-->
         <div class="display-one">
           <div class="links">
             <button type="button" class="link-button">Links</button>
@@ -24,8 +23,7 @@
               alt="Search Icon"
             />
           </div>
-          <!--LINKS DISPLAY-->
-          <div class="box-one">
+          <div class="box-one no-show">
             <div class="link">
               <svg
                 class="link-icon"
@@ -67,8 +65,6 @@
               </svg>
               <p class="link-item"><a class="the-link">Instagram</a></p>
             </div>
-
-            <!--LINK ITEMS-->
             <!-- <div class="link">
               <svg
                 width="1.5em"
@@ -87,7 +83,6 @@
               </svg>
               <p class="link-item">Instagram</p>
             </div> -->
-
             <div class="add-new-item">
               <img
                 class="new-item-icon"
@@ -97,8 +92,6 @@
               <p class="new-item">New Link</p>
             </div>
           </div>
-
-          <!--ADD NEW LINK-->
           <div class="item-info">
             <svg
               class="back-button"
@@ -120,7 +113,6 @@
             <input class="url-input" type="text" placeholder="example.com" />
             <button type="button" class="submit-link">Create</button>
           </div>
-
           <div class="desktop-weather">
             <div class="weather">
               <img
@@ -138,8 +130,6 @@
         <div class="time-container">
           <div class="display-time">
             <div class="time">18:35</div>
-
-            <!--DISPLAY TIME IN PERCENTAGE-->
             <div class="time-percentage">
               48<span class="percentage">%</span>
             </div>
@@ -150,7 +140,7 @@
                 alt="Menu Button"
                 class="more-button"
               />
-              <div class="show-percentage">
+              <div class="show-percentage no-show">
                 <div class="percentage-menu">
                   <p class="percentage-message">Percent Clock</p>
                   <p class="percentage-caption">
@@ -160,23 +150,20 @@
               </div>
             </div>
           </div>
-
           <div>
-            <p class="greeting-before">
+            <p class="greeting-before display">
               Good afternoon,<input
                 type="text"
                 class="user-name"
                 placeholder="Name"
               />.
             </p>
-            <p class="greeting-after">Good afternoon, Joel.</p>
+            <p class="greeting-after no-display">Good afternoon, Joel.</p>
           </div>
-          -->
-
           <div class="focus">
             <p class="focus-question">What is your main focus for today?</p>
             <div class="focus-input">
-              <input class="user-input" type="text" />
+              <input class="user-input" type="text" \ />
             </div>
           </div>
           <div class="after-focus-added">
@@ -185,13 +172,11 @@
               alt="CheckBox"
               class="complete-task-icon"
             />
-            <p class="focus-question">Finish Havards CS50 Today</p>
+            <p class="focus-question focus-got">Finish Havards CS50 Today</p>
             <img src="/icons/cancel.png" class="cancel-task current-icon" />
             <img src="/icons/plus.png" class="add-new-task hidden-icon" />
           </div>
         </div>
-        <!--FOCUS-->
-
         <div class="display-two">
           <div class="setting">
             <button type="button" class="settings">
@@ -213,7 +198,7 @@
             </p>
           </div>
           <div class="desktop-todo">
-            <div class="todo-container">
+            <div class="todo-container no-show">
               <div class="todo-today">Today</div>
               <div class="no-todos">
                 <div class="no-todos-today">No todos yet</div>
@@ -226,7 +211,6 @@
                   placeholder="New Todo"
                 />
               </div>
-
               <div class="todo-tasks">
                 <img
                   src="/icons/checkbox.png"
@@ -245,7 +229,6 @@
                   class="remove-task"
                 />
               </div>
-
               <!-- <div class="todo-tasks">
                 <img
                   src="/icons/checkbox.png"
