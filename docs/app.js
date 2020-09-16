@@ -35,6 +35,10 @@ const mainController = ((dataCtrl, UICtrl) => {
 
     const domElements = UICtrl.returnDomElements();
 
+    const initFunction = () => {
+
+    };
+
 
 
     // Listen for user Name
@@ -115,6 +119,13 @@ const mainController = ((dataCtrl, UICtrl) => {
         document.querySelector(domElements.todoContainer).classList.toggle('no-show');
 
     })
+
+
+    return {
+        init: () => {
+            return initFunction();
+        }
+    }
 })(dataController, UIController);
 
 
