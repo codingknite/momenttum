@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   user-select: none;
+  font-size: 1em;
 }
 
 /*****************************
@@ -57,12 +58,12 @@ UPPER SECTION
   outline: none;
   font-family: var(--main-font);
   color: var(--main-color);
-  font-size: 17px;
+  font-size: 1.1rem;
   cursor: pointer;
   padding-left: 10px;
 }
 .search-icon {
-  width: 20px;
+  width: 1.25rem;
 }
 
 /***************
@@ -70,8 +71,8 @@ LINK ITEMS
 ****************/
 .box-one {
   visibility: hidden; /*Display In JavaScript*/ /*Auto Adjust Height*/
-  width: 220px;
-  height: 130px;
+  width: 13.7em;
+  height: 8.125em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -80,7 +81,7 @@ LINK ITEMS
   font-family: var(--main-font);
   padding: 20px;
   position: absolute;
-  top: 7vh;
+  top: 6.5vh;
   opacity: 0.85;
   border-radius: 5px;
   cursor: pointer;
@@ -93,6 +94,11 @@ LINK ITEMS
   margin: 5px;
 }
 
+.the-link {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
 .link:hover {
   opacity: 1;
   color: var(--main-color);
@@ -100,7 +106,7 @@ LINK ITEMS
 
 .link-item {
   align-self: center;
-  font-size: 17.5px;
+  font-size: 1.07rem;
   margin-left: 10px;
 }
 
@@ -113,8 +119,8 @@ LINK ITEMS
   opacity: 1;
 }
 .new-item-icon {
-  width: 10%;
-  height: 100%;
+  width: 1rem;
+  height: 1rem;
   opacity: 0.7;
 }
 
@@ -131,12 +137,12 @@ ADD NEW LINK ITEM
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 250px;
-  height: 250px;
-  background-color: rgba(5, 5, 5, 0.829);
+  width: 15.7em;
+  height: 15.7em;
+  background-color: rgba(5, 5, 5, 0.829); /**********REFACTOR***************/
   color: var(--main-color);
   font-family: var(--main-font);
-  padding: 20px;
+  padding: 10px;
   margin: 5px;
   position: absolute;
   top: 7vh;
@@ -156,7 +162,7 @@ ADD NEW LINK ITEM
 
 .link-name,
 .link-url {
-  font-size: 13px;
+  font-size: 0.95rem;
 }
 .link-name-input,
 .url-input {
@@ -164,7 +170,8 @@ ADD NEW LINK ITEM
   outline: none;
   border: none;
   border-bottom: 2px solid var(--main-color);
-  font-size: 10px;
+  color: var(--main-color);
+  font-size: 1.05rem;
   padding: 3px;
   position: relative;
   bottom: 6%;
@@ -175,17 +182,16 @@ ADD NEW LINK ITEM
   border: none;
   width: 100px;
   border-radius: 20px;
-  background: gray;
+  background: rgb(48, 48, 48);
   padding: 10px;
   color: var(--main-color);
   font-family: var(--main-font);
-  font-size: 15px;
-  opacity: 0.9;
+  font-size: 1rem;
 }
 
 .submit-link:hover {
+  background: rgb(85, 85, 85);
   cursor: pointer;
-  opacity: 1;
 }
 
 /****************
@@ -194,7 +200,7 @@ WEATHER SECTION
 .desktop-weather {
   color: var(--main-color);
   font-family: var(--main-font);
-  width: 100px;
+  width: 6.25em;
 }
 
 .weather {
@@ -209,18 +215,18 @@ WEATHER SECTION
   margin-right: 7px;
 }
 .weather-info {
-  font-size: 28px;
+  font-size: 1.7rem;
   font-weight: 200;
   text-align: center;
   align-self: flex-end;
 }
 
 .degree {
-  font-size: 22px;
+  font-size: 1.5rem;
 }
 
 .location {
-  font-size: 13px;
+  font-size: 0.9rem;
   text-align: center;
 }
 
@@ -233,8 +239,7 @@ DISPLAY TIME SECTION
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  height: 30vh;
-  margin-top: 11.25em;
+  height: 70vh;
 }
 
 .display-time {
@@ -248,7 +253,7 @@ DISPLAY TIME SECTION
   margin-left: 3%;
   color: var(--main-color);
   font-family: var(--main-font);
-  font-size: 164px;
+  font-size: 10rem;
 }
 
 .time-percentage {
@@ -257,12 +262,11 @@ DISPLAY TIME SECTION
 
 .percentage {
   color: var(--main-color);
-  font-size: 45px;
+  font-size: 2.8rem;
   padding: 1px;
 }
 
 .time-in-percent {
-  visibility: hidden;
   display: flex;
   position: relative;
   color: var(--main-color);
@@ -270,6 +274,7 @@ DISPLAY TIME SECTION
 }
 
 .show-percentage {
+  visibility: hidden;
   position: absolute;
   width: 15.5em;
   height: 4.3em;
@@ -283,12 +288,12 @@ DISPLAY TIME SECTION
 }
 
 .percentage-message {
-  font-size: 1em;
+  font-size: 1.03rem;
   line-height: 1.8em;
 }
 
 .percentage-caption {
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 .percentage-menu {
@@ -296,11 +301,12 @@ DISPLAY TIME SECTION
 }
 
 .percentage-menu:hover {
-  background: rgba(128, 128, 128, 0.664);
-  border-radius: 3px;
+  background: rgba(128, 128, 128, 0.5);
+  border-radius: 1px;
 }
 
 .more-button {
+  visibility: hidden;
   width: 2em;
   height: 2em;
   margin-left: 1em;
@@ -309,7 +315,7 @@ DISPLAY TIME SECTION
 }
 
 .more-button:hover {
-  background: rgba(168, 164, 164, 0.26);
+  background: rgba(168, 164, 164, 0.336);
   border-radius: 50%;
 }
 
@@ -317,26 +323,26 @@ DISPLAY TIME SECTION
 .greeting-after {
   color: var(--main-color);
   font-family: var(--main-font);
-  font-size: 52px;
+  font-size: 3.4rem;
 }
 
 .greeting-after {
-  display: none;
+  display: none; /*Change to display none*/
 }
 .user-name {
   border: none;
   background: none;
   outline: none;
   text-align: center;
-  width: 150px;
+  width: 3.5em;
   border-bottom: 1px solid white;
   color: var(--main-color);
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 .user-name::placeholder {
   font-family: var(--main-font);
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 /*******************
@@ -345,7 +351,7 @@ DISPLAY FOCUS SECTION
 .focus,
 .after-focus-added {
   position: relative;
-  bottom: 40px;
+  top: 10em;
 }
 
 .focus {
@@ -356,7 +362,7 @@ DISPLAY FOCUS SECTION
   color: var(--main-color);
   font-family: var(--main-font);
   text-align: center;
-  font-size: 35px;
+  font-size: 2.5rem;
 }
 
 .focus-input {
@@ -367,11 +373,11 @@ DISPLAY FOCUS SECTION
   border: none;
   outline: none;
   border-bottom: 1px solid white;
-  width: 550px;
+  width: 35rem;
   background: none;
   padding: 5px;
   color: var(--main-color);
-  font-size: 32px;
+  font-size: 2.3rem;
   text-align: center;
 }
 
@@ -421,18 +427,16 @@ BOTTOM SECTION
 **********************/
 
 .display-two {
-  display: flex;
-  justify-content: space-between;
   color: var(--main-color);
   font-family: var(--main-font);
-  padding: 10px;
 }
 
 .setting {
+  width: 20vw;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 150px;
+  position: relative;
+  top: 1.5em;
+  left: 1em;
   font-family: var(--main-font);
 }
 
@@ -444,6 +448,7 @@ BOTTOM SECTION
   color: var(--main-color);
   font-family: var(--main-font);
   opacity: 0.7;
+  margin-right: 1em;
 }
 
 .settings:hover {
@@ -454,26 +459,25 @@ BOTTOM SECTION
 }
 
 .pic-description {
-  font-size: 12px;
+  text-align: center;
+  font-size: 0.85rem;
 }
 
 .pic-description-2 {
-  font-size: 12px;
+  font-size: 0.7rem;
   text-align: center;
 }
 
-.quote {
-  width: 500px;
-}
 .the-quote {
-  width: 390px;
   text-align: center;
-  font-size: 19px;
+  font-size: 1.05rem;
 }
 
 .desktop-todo {
   position: relative;
-  padding: 10px;
+  float: right;
+  right: 1.5em;
+  bottom: 1em;
 }
 
 .todo-section {
@@ -482,26 +486,26 @@ BOTTOM SECTION
   outline: none;
   color: var(--main-color);
   font-family: var(--main-font);
-  font-size: 16px;
+  font-size: 1.05rem;
   cursor: pointer;
 }
 
 .todo-container {
-  background: rgba(5, 5, 5, 0.829);
+  visibility: hidden; /*Change to vsisble with JS*/
+  position: absolute;
+  bottom: 2em;
+  right: 1em;
   width: 20em;
   height: 16em; /*Find a way to auto adjust height*/
-  position: absolute;
-  bottom: 3em;
-  right: 0.5em;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /*Change to none when displaying todo tasks*/
-  visibility: hidden; /*Change to vsisble with JS*/
+  background: rgba(5, 5, 5, 0.829);
 }
 
 .todo-today {
-  font-size: 1.2em;
+  font-size: 1rem;
   margin: 0.8em;
 }
 
@@ -512,7 +516,8 @@ BOTTOM SECTION
 }
 
 .no-todos-today {
-  font-size: 1em;
+  text-align: center;
+  font-size: 1rem;
   margin: 0.5em;
 }
 
@@ -520,19 +525,20 @@ BOTTOM SECTION
   outline: none;
   border: none;
   align-self: center;
-  width: 8.5em;
+  width: 7em;
   padding: 0.6em;
-  border-radius: 17px;
-  background: rgba(128, 128, 128, 0.74);
+  border-radius: 1rem;
+  color: var(--main-color);
+  background: rgba(128, 128, 128, 0.5);
   cursor: pointer;
 }
 
 .task-input {
-  display: block; /*Change Display To none In JS when new item has been added*/
+  display: block; /*Change Display To none In JS when new item has been added* else block*/
 }
 
 .add-todo-task:hover {
-  background: rgb(128, 128, 128);
+  background: rgba(128, 128, 128, 0.705);
 }
 
 .new-todo-task {
@@ -541,13 +547,14 @@ BOTTOM SECTION
   outline: none;
   background: none;
   padding: 0.8em;
-  font-size: 1em;
+  font-size: 1.05rem;
+  color: var(--main-color);
 }
 
 .todo-tasks {
-  display: flex;
+  display: none; /*Switch to display flex*/
   align-items: center;
-  margin: 0.3em;
+  margin: 1em;
 }
 
 .todo-task {
@@ -586,273 +593,38 @@ BOTTOM SECTION
 **** RESPONSIVE DEISGN
 ************************************************************/
 
-/**********************
-Tablets
-***********************/
+/**********************************
+Large Screens
+***********************************/
 
-@media screen and (max-width: 768px) {
-  /**********************
-  Time Section
-  ***********************/
-
-  .time,
-  .time-percentage {
-    font-size: 122px;
-  }
-
-  .time-percentage {
-    display: none;
-  }
-
-  .percentage {
-    font-size: 25px;
-  }
-
-  .time-in-percent {
-    visibility: visible;
-  }
-
-  .show-percentage {
-    visibility: hidden;
-    width: 11em;
-    height: 4em;
-    top: -3.2em;
-    left: 3em;
-  }
-
-  .percentage-message {
-    font-size: 0.8;
-  }
-
-  .percentage-caption {
-    font-size: 0.55em;
-  }
-
-  .greeting-before,
-  .greeting-after {
-    font-size: 52px;
-  }
-
-  .user-name {
-    text-align: center;
-    width: 100px;
-    font-size: 50px;
-  }
-
-  .user-name::placeholder {
-    font-size: 30px;
-  }
-}
-
-/* MOBILE DEVICES*/
-
-@media screen and (max-width: 767px) {
-  /****************
-  Upper Section
-  *****************/
-  .display-one {
-    padding: 10px;
-    height: 10vh;
-  }
-
-  .link-button {
-    font-size: 1.2em;
-    padding-left: 0.5em;
-  }
-
-  .search-icon {
-    width: 1.1em;
-  }
-
-  /***************
-  Link Items
-  ****************/
-  .box-one {
-    width: 150px;
-    height: 100px;
-    display: flex;
-    padding: 10px;
-    position: absolute;
-    top: 7.5vh;
-  }
-
-  .link {
-    display: flex;
-    opacity: 0.8;
-    margin: 2px;
-  }
-
-  .link-item {
-    font-size: 15px;
-    margin-left: 5px;
-  }
-
-  .add-new-item {
-    font-size: 15px;
-    margin: 5px;
-  }
-
-  .new-item-icon {
-    width: 1em;
-    height: 1em;
-  }
-
-  .new-item {
-    margin-left: 10px;
-    opacity: 0.7;
-  }
-
-  .link-icon {
-    width: 1em;
-  }
-
-  /*****************
-  Add new link item
-  *****************/
-
-  .item-info {
-    width: 180px;
-    height: 200px;
-    padding: 20px;
-    margin: 5px;
-    position: absolute;
-    top: 7vh;
-    opacity: 0.85;
-    border-radius: 3px;
-  }
-
-  .back-button {
-    padding: 0.1em;
-  }
-
-  .link-name-input,
-  .url-input {
-    font-size: 15px;
-    padding: 1px;
-    bottom: 5%;
-  }
-
-  .submit-link {
-    padding: 5px;
-    font-size: 15px;
-  }
-  /**************
-  Weather Display
-  ***************/
-  .weather {
-    padding-top: 10px;
-  }
-
-  .cloud-icon {
-    width: 1.8em;
-  }
-  .weather-info {
-    font-size: 1.3em;
-  }
-
-  .degree {
-    font-size: 1.2em;
-  }
-
-  .location {
-    font-size: 0.9em;
-  }
-
-  /**********************
-  Time Section
-  ***********************/
-
-  .time-container {
-    margin-top: 6.25em;
-  }
-
-  .time,
-  .time-percentage {
-    margin-left: 0.5em;
-    font-size: 58px;
-  }
-
-  .time-percentage {
-    display: none;
-  }
-
-  .percentage {
-    font-size: 25px;
-  }
-
-  .time-in-percent {
-    visibility: visible;
-  }
-
-  .show-percentage {
-    visibility: hidden;
-    width: 5em;
-    height: 2.3em;
-    padding: 5px;
-    top: -2.5em;
-    left: 0em;
-  }
-
-  .percentage-message {
-    font-size: 0.5em;
-    line-height: 1em;
-  }
-
-  .percentage-caption {
-    font-size: 0.3em;
-  }
-
-  .percentage-menu {
-    padding: 0.1em;
-  }
-
-  .more-button {
-    width: 1.2em;
-    height: 1.2em;
-    margin-left: 0;
-  }
-
-  .greeting-before,
-  .greeting-after {
-    font-size: 25px;
-  }
-
-  .user-name {
-    text-align: center;
-    width: 60px;
-    font-size: 25px;
-  }
-
-  .user-name::placeholder {
-    font-size: 18px;
-  }
-
+@media screen and (max-width: 1023px) {
   /*********************
-  Display Focus
+  DISPLAY TIME SECTION
   **********************/
 
+  .time,
+  .time-percentage {
+    font-size: 9rem;
+  }
+
+  .show-percentage {
+    width: 22vw;
+    height: 6.8vh;
+    top: -5em;
+    left: 2em;
+  }
+
+  /*******************
+  DISPLAY FOCUS SECTION
+********************/
   .focus,
   .after-focus-added {
     position: relative;
-    bottom: 20px;
+    top: 10em;
   }
 
   .focus {
     display: block; /*Switch To Display None */
-  }
-
-  .focus-question {
-    font-size: 19px;
-  }
-
-  .focus-input {
-    text-align: center;
-  }
-
-  .user-input {
-    width: 250px;
-    padding: 3px;
-    font-size: 18px;
   }
 
   .after-focus-added {
@@ -861,376 +633,436 @@ Tablets
     align-items: center;
   }
 
-  .current-icon {
-    background: none;
-    border-radius: 50%;
-    padding: 0.1em;
-  }
-  .after-focus-added:hover .current-icon {
-    border-radius: 50%;
-  }
-  .current-icon:hover {
-    background: rgba(128, 128, 128, 0.664);
-  }
-
-  .hidden-icon {
-    display: none;
-  }
-
   .complete-task-icon {
-    width: 1em;
-    height: 1em;
-    margin-right: 0.35em;
     visibility: visible;
   }
 
   .cancel-task,
   .add-new-task {
-    width: 1em;
-    height: 1em;
-    margin-left: 0.35em;
-    margin-top: 2px;
-    padding: 0.2em;
     visibility: visible;
+    border-radius: 50%;
   }
 
-  /***********************
-  Bottom Part
-  ************************/
-
-  .setting {
-    width: 250px;
-  }
+  /******************
+  BOTTOM PART
+  *******************/
 
   .settings {
     opacity: 1;
   }
 
-  .settings-icon {
-    width: 1.5em;
-  }
-
   .pic-description {
-    font-size: 6px;
+    font-size: 1.5vw;
   }
 
   .pic-description-2 {
-    font-size: 6px;
+    font-size: 1.2vw;
   }
 
-  .quote {
-    width: 500px;
-  }
   .the-quote {
-    width: 150px;
-    font-size: 10px;
+    font-size: 1.6vw;
   }
 
-  .todo-container {
-    background: rgb(5, 5, 5);
-    width: 15em;
-    height: 13em; /*Find a way to auto adjust height*/
-    bottom: 2.5em;
-    right: 1.5em;
-    justify-content: space-between; /*Change to none when displaying todo tasks*/
-    visibility: hidden; /*Change to vsisble with JS*/
-  }
-
-  .todo-today {
-    font-size: 1em;
-    margin: 0.8em;
-  }
-
-  .no-todos {
-    align-self: center;
-    display: flex; /*Change Display To none In JS when new item has been added*/
-    flex-direction: column;
-  }
-
-  .no-todos-today {
-    font-size: 0.8em;
-    text-align: center;
-    margin: 0.5em;
-  }
-
-  .add-todo-task {
-    width: 7em;
-  }
-
-  .task-input {
-    display: block; /*Change Display To none In JS when new item has been added*/
-  }
-
-  .todo-tasks {
-    margin: 0.3em;
-    display: none; /*Change With JavaScript*/
-  }
-
-  .todo-task {
-    font-size: 0.8em;
-  }
-
-  .finish-task,
-  .finished-task,
-  .remove-task {
-    margin-right: 0.5em;
-  }
-
-  .remove-task {
-    margin-left: 0.5em;
-    visibility: visible;
+  .todo-section {
+    font-size: 2vw;
   }
 }
 
-@media screen and (max-width: 576px) {
-  /**********************
-  Time Section
-  ***********************/
+/********************
+TABLETS
+*********************/
+
+@media screen and (max-width: 767px) {
+  /*********************
+DISPLAY TIME SECTION
+**********************/
+
+  main {
+    height: 105vh;
+  }
+
+  .content {
+    height: 105vh;
+  }
+
+  .time-container {
+    /* background: crimson; */
+    height: 70vh;
+  }
 
   .time,
   .time-percentage {
-    font-size: 70px;
+    margin-left: 3%;
+    font-size: 7rem;
   }
 
   .time-percentage {
     display: none;
   }
 
-  .percentage {
-    font-size: 25px;
-  }
-
-  .time-in-percent {
-    visibility: visible;
-  }
-
   .show-percentage {
-    visibility: hidden;
-    width: 6em;
-    top: -2.2em;
-    left: 0.5em;
+    outline: none;
+    width: 30vw;
+    height: 4.5em;
+    padding: 10px;
+    top: -6.5em;
+    left: -1em;
   }
 
   .percentage-message {
-    font-size: 0.55em;
+    font-size: 0.9rem;
+    line-height: 1.8em;
   }
 
   .percentage-caption {
-    font-size: 0.45em;
-  }
-
-  .greeting-before,
-  .greeting-after {
-    font-size: 33px;
-  }
-
-  .user-name {
-    text-align: center;
-    width: 75px;
-    font-size: 25px;
-  }
-
-  .user-name::placeholder {
-    font-size: 22px;
-  }
-
-  /*********************
-  Display Focus
-  **********************/
-
-  .focus,
-  .after-focus-added {
-    bottom: 30px;
-  }
-
-  .focus-question {
-    font-size: 22px;
-  }
-
-  .user-input {
-    width: 260px;
-    font-size: 19px;
-  }
-
-  .complete-task-icon {
-    margin-right: 0.4em;
-  }
-
-  /***********************
-  Bottom Part
-  ************************/
-
-  .setting {
-    width: 150px;
-  }
-
-  .quote {
-    width: 400px;
-  }
-  .the-quote {
-    width: 200px;
-    font-size: 14px;
-    margin-left: 2em;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .quote {
-    width: 500px;
-  }
-  .the-quote {
-    margin-left: 2em;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  /**********************
-  Time Section
-  ***********************/
-
-  .time,
-  .time-percentage {
-    font-size: 55px;
-  }
-
-  /***********************
-  Bottom Part
-  ************************/
-
-  .setting {
-    width: 150px;
-  }
-
-  .quote {
-    width: 400px;
-  }
-  .the-quote {
-    width: 150px;
-    font-size: 10px;
-    margin-left: 3em;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  /**********************
-    Time Section
-    ***********************/
-
-  .time-container {
-    margin-top: 6.25em;
-  }
-
-  .time,
-  .time-percentage {
-    margin-left: 0.5em;
-    font-size: 58px;
-  }
-
-  .percentage {
-    font-size: 25px;
-  }
-
-  .show-percentage {
-    visibility: hidden;
-    width: 5em;
-    height: 2.3em;
-    padding: 5px;
-    top: -2.5em;
-    left: 0em;
-  }
-
-  .percentage-message {
-    font-size: 0.5em;
-    line-height: 1em;
-  }
-
-  .percentage-caption {
-    font-size: 0.3em;
+    font-size: 0.7rem;
   }
 
   .percentage-menu {
     padding: 0.1em;
   }
 
+  .percentage-menu:hover {
+    background: rgba(128, 128, 128, 0.5);
+    border-radius: 1px;
+    outline: none;
+  }
+
   .greeting-before,
   .greeting-after {
-    font-size: 25px;
+    font-size: 2.4rem;
   }
 
   .user-name {
-    text-align: center;
-    width: 60px;
-    font-size: 25px;
+    width: 3.5em;
+    font-size: 2rem;
   }
 
   .user-name::placeholder {
-    font-size: 18px;
+    font-size: 2rem;
   }
 
-  /*********************
-    Display Focus
-    **********************/
+  /*******************
+DISPLAY FOCUS SECTION
+********************/
+  .focus,
+  .after-focus-added {
+    position: relative;
+    top: 5em;
+  }
+
+  .focus {
+    display: block; /*Switch To Display None */
+  }
 
   .focus-question {
-    font-size: 19px;
+    font-size: 1.8rem;
   }
 
   .user-input {
-    width: 250px;
-    padding: 3px;
-    font-size: 18px;
+    width: 24rem;
+    padding: 8px;
+    font-size: 1.8rem;
   }
 
-  .current-icon {
-    background: none;
-    border-radius: 50%;
-    padding: 0.1em;
-  }
-  .after-focus-added:hover .current-icon {
-    border-radius: 50%;
-  }
-  .current-icon:hover {
-    background: rgba(128, 128, 128, 0.664);
-  }
-
-  .hidden-icon {
-    display: none;
+  .after-focus-added {
+    display: none; /* Switch To Display Flex In JavaScript */
+    justify-content: center;
+    align-items: center;
   }
 
   .complete-task-icon {
-    width: 1em;
-    height: 1em;
-    margin-right: 0.35em;
+    width: 1.3em;
+    height: 1.3em;
+    margin-right: 1em;
+    cursor: pointer;
     visibility: visible;
   }
 
   .cancel-task,
   .add-new-task {
-    width: 1em;
-    height: 1em;
-    margin-left: 0.35em;
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 1em;
+    cursor: pointer;
     margin-top: 2px;
     padding: 0.2em;
     visibility: visible;
   }
+}
 
-  /***********************
-    Bottom Part
-    ************************/
+@media screen and (max-width: 576px) {
+  /*********************
+  LINK SECTION
+  **********************/
 
-  .setting {
-    width: 250px;
+  .box-one {
+    background-color: rgb(5, 5, 5); /**********REFACTOR***************/
+    opacity: 1;
+    width: 12em;
   }
 
-  .settings-icon {
-    width: 1.5em;
+  .item-info {
+    background-color: rgb(5, 5, 5); /**********REFACTOR***************/
+    opacity: 1;
+  }
+
+  /*********************
+DISPLAY TIME SECTION
+**********************/
+
+  .time-container {
+    /* background: crimson; */
+    height: 70vh;
+  }
+
+  .time,
+  .time-percentage {
+    margin-left: 3%;
+    font-size: 6rem;
+  }
+
+  .time-percentage {
+    display: none;
+  }
+
+  .show-percentage {
+    outline: none;
+    width: 34vw;
+    height: 4em;
+    padding: 10px;
+    top: -6.4em;
+    left: -3em;
+  }
+
+  .percentage-message {
+    font-size: 0.7rem;
+    line-height: 1.8em;
+  }
+
+  .percentage-caption {
+    font-size: 0.5rem;
+  }
+
+  .percentage-menu {
+    padding: 0.1em;
+  }
+
+  .percentage-menu:hover {
+    background: rgba(128, 128, 128, 0.5);
+    border-radius: 1px;
+    outline: none;
+  }
+
+  .greeting-before,
+  .greeting-after {
+    font-size: 2rem;
+  }
+
+  .user-name {
+    width: 3.5em;
+    font-size: 1.9rem;
+  }
+
+  .user-name::placeholder {
+    font-size: 1.8rem;
+  }
+
+  /*******************
+DISPLAY FOCUS SECTION
+********************/
+  .focus,
+  .after-focus-added {
+    position: relative;
+    top: 5em;
+  }
+
+  .focus-question {
+    font-size: 1.5rem;
+  }
+
+  .user-input {
+    width: 20rem;
+
+    font-size: 1.45rem;
+  }
+
+  .complete-task-icon {
+    margin-right: 0.7em;
+  }
+
+  .cancel-task,
+  .add-new-task {
+    margin-left: 0.7em;
+  }
+
+  /******************
+  BOTTOM PART
+  *******************/
+
+  .setting {
+    width: 23vw;
+    top: 2.5em;
+    left: 0.8em;
+  }
+
+  .settings {
+    margin-right: 1em;
+    opacity: 1;
   }
 
   .pic-description {
-    font-size: 6px;
+    font-size: 0.5rem;
   }
 
   .pic-description-2 {
-    font-size: 6px;
+    font-size: 0.43rem;
+  }
+
+  .quote {
+    margin-left: 35%;
+    margin-right: 32%;
+  }
+  .the-quote {
+    text-align: center;
+    font-size: 0.6rem;
+  }
+
+  .todo-section {
+    font-size: 1.05rem;
+  }
+
+  .todo-container {
+    right: 1em;
+    width: 15em;
+    height: 15em; /*Find a way to auto adjust height*/
+    background: rgb(5, 5, 5);
+  }
+}
+
+@media screen and (max-width: 360px) {
+  /*********************
+DISPLAY TIME SECTION
+**********************/
+
+  .time,
+  .time-percentage {
+    font-size: 6rem;
+  }
+
+  .greeting-before,
+  .greeting-after {
+    font-size: 1.8rem;
+  }
+
+  .user-name {
+    font-size: 1.7rem;
+  }
+
+  .user-name::placeholder {
+    font-size: 1.6rem;
+  }
+
+  /*******************
+DISPLAY FOCUS SECTION
+********************/
+
+  .focus-question {
+    font-size: 1.35rem;
+  }
+
+  .user-input {
+    width: 18rem;
+
+    font-size: 1.34rem;
+  }
+
+  /******************
+  BOTTOM PART
+  *******************/
+
+  .setting {
+    width: 23vw;
+    top: 3em;
+  }
+
+  .pic-description {
+    font-size: 0.42rem;
+  }
+
+  .pic-description-2 {
+    font-size: 0.4rem;
+  }
+
+  .quote {
+    margin-left: 33%;
+    margin-right: 30%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /*********************
+  DISPLAY TIME SECTION
+  **********************/
+
+  .time,
+  .time-percentage {
+    font-size: 25vw;
+  }
+
+  .show-percentage {
+    width: 32vw;
+    height: 3.5em;
+    padding: 8px;
+    top: -5em;
+    left: -3em;
+  }
+
+  .greeting-before,
+  .greeting-after {
+    font-size: 1.55rem;
+  }
+
+  .user-name {
+    font-size: 1.5rem;
+  }
+
+  .user-name::placeholder {
+    font-size: 1.5rem;
+  }
+
+  /*******************
+  DISPLAY FOCUS SECTION
+  ********************/
+
+  .focus-question {
+    font-size: 1.15rem;
+  }
+
+  .user-input {
+    width: 15rem;
+    font-size: 1.2rem;
+  }
+
+  /******************
+  BOTTOM PART
+  *******************/
+
+  .setting {
+    width: 23vw;
+    top: 3em;
+  }
+
+  .pic-description {
+    font-size: 0.42rem;
+  }
+
+  .pic-description-2 {
+    font-size: 0.4rem;
+  }
+
+  .quote {
+    margin-left: 33%;
+    margin-right: 30%;
   }
 }
