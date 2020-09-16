@@ -1,4 +1,4 @@
-let empty = " ";
+let empty = "";
 
 console.log(empty);
 
