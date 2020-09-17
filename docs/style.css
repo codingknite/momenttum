@@ -510,7 +510,7 @@ BOTTOM SECTION
   width: 20em;
   min-height: 16em; /*Find a way to auto adjust height*/
   max-height: 60em;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   /* overflow: scroll; */
   border-radius: 4px;
   display: flex;
