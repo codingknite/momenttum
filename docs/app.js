@@ -35,6 +35,7 @@ const dataController = (() => {
             return ID;
         }
     };
+
     return {
         newLink: (linkName, linkURL) => {
 
@@ -52,6 +53,16 @@ const dataController = (() => {
             const newTodo = new Todos(todoID, todoDescription);
             data.allItems.todos.push(newTodo);
             return newTodo;
+        },
+
+        removeTask: taskName => {
+            for (const key in data.allItems.todos) {
+
+                if (data.allItems.todos[key].description === taskName) {
+                    const index = data.allItems.todos[key].id;
+                    data.allItems.todos.splice(index, 1);
+                };
+            };
         },
         test: () => {
             return data.allItems;
@@ -97,7 +108,10 @@ const UIController = (() => {
         todoInputContainer: '.task-input',
         noTodos: '.no-todos',
         todoTask: '.todo-tasks',
-        todoToday: '.todo-today'
+        todoItem: '.todo-task',
+        todoToday: '.todo-today',
+        todoItemsContainer: '.todo-items',
+        removeTaskButton: '.remove-task'
     };
 
     const userObject = {
@@ -283,7 +297,6 @@ const UIController = (() => {
 
         displayTodoItem: (todo) => {
 
-            console.log("YEAH I GOT A TODO AND ITS ACTUALLY " + todo)
             const html = `<div class="todo-tasks">
             <img
               src="/icons/checkbox.png"
@@ -383,6 +396,8 @@ const mainController = ((dataCtrl, UICtrl) => {
         //Add new todo
         document.querySelector(domElements.todoInputField).addEventListener('keypress', addTodo);
 
+        //Delete Todo Items
+        document.querySelector(domElements.todoContainer).addEventListener('click', deleteTodoItem);
 
     };
 
@@ -489,15 +504,41 @@ const mainController = ((dataCtrl, UICtrl) => {
             //Get User Input
             const userInputTodo = UICtrl.todoInput();
 
-            console.log(userInputTodo);
+            if (userInputTodo.todoTask) {
+                //Add to data structure 
+                dataCtrl.newTodoItem(userInputTodo.todoTask);
 
-            //Add to data structure 
-            dataCtrl.newTodoItem(userInputTodo.todoTask);
-
-            //Display to the UI
-            UICtrl.displayTodoItem(userInputTodo.todoTask);
+                //Display to the UI
+                UICtrl.displayTodoItem(userInputTodo.todoTask);
+            };
         };
     };
+
+    const deleteTodoItem = event => {
+
+
+        const targetClassList = Array.from(event.target.classList);
+
+        const nodeChildren = Array.from(event.target.parentNode.children);
+
+        if (targetClassList.includes('remove-task')) {
+            const taskToRemove = nodeChildren[2].innerText;
+
+            //Remove Item from data structure
+            dataCtrl.removeTask(taskToRemove);
+
+
+
+        };
+        //if button pressed is delete
+        // if (event.target.classList.includes(domElements.removeTaskButton)) {
+        //     console.log("YEP, YA FOUND ME")
+        // }
+
+        //Delete todo from data structure
+
+        //Dlete todo from UI
+    }
 
     return {
         init: () => {
