@@ -155,7 +155,7 @@ LINK ITEMS
 ADD NEW LINK ITEM
 *****************/
 .item-info {
-  visibility: hidden; /*Display With Javascrip*/
+  /* visibility: hidden; Display With Javascrip */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -280,10 +280,6 @@ DISPLAY TIME SECTION
   color: var(--main-color);
   font-family: var(--main-font);
   font-size: 10rem;
-}
-
-.time-percentage {
-  display: none;
 }
 
 .percentage {
@@ -426,7 +422,6 @@ DISPLAY FOCUS SECTION
   height: 1.3em;
   margin-right: 1em;
   cursor: pointer;
-  visibility: hidden;
 }
 
 .cancel-task,
@@ -706,10 +701,6 @@ DISPLAY TIME SECTION
   .time-percentage {
     margin-left: 3%;
     font-size: 7rem;
-  }
-
-  .time-percentage {
-    display: none;
   }
 
   .show-percentage {
