@@ -1,5 +1,62 @@
 const dataController = (() => {
 
+    const Link = function (id, linkName, linkAddress) {
+        this.id = id;
+        this.linkName = linkName;
+        this.linkAddress = linkAddress;
+    };
+
+    const Todos = function (id, description) {
+        this.id = id;
+        this.description = description;
+    }
+    const data = {
+        allItems: {
+            links: [],
+            todos: []
+        }
+    };
+
+    const getID = (type) => {
+
+        // ID = indexOf last element + 1
+        let ID;
+        if (type === 'links') {
+            if (data.allItems.links.length > 0) {
+                ID = data.allItems.links[data.allItems.links.length - 1].id + 1;
+            } else
+                ID = 0;
+            return ID;
+        } else if (type === 'todos') {
+            if (data.allItems.todos.length > 0) {
+                ID = data.allItems.todos[data.allItems.todos.length - 1].id + 1;
+            } else
+                ID = 0;
+            return ID;
+        }
+    };
+    return {
+        newLink: (linkName, linkURL) => {
+
+            const linkID = getID('links');
+
+            const newLink = new Link(linkID, linkName, linkURL);
+            data.allItems.links.push(newLink);
+            return newLink;
+        },
+
+        newTodoItem: todoDescription => {
+
+            const todoID = getID('todos');
+
+            const newTodo = new Todos(todoID, todoDescription);
+            data.allItems.todos.push(newTodo);
+            return newTodo;
+        },
+        test: () => {
+            return data.allItems;
+        }
+    };
 })();
 
 
@@ -29,10 +86,18 @@ const UIController = (() => {
         percentageMessage: '.percentage-message',
         percentageCaption: '.percentage-caption',
         newLink: '.new-item',
+        newLinkButton: '.add-new-item',
         addLink: '.item-info',
         linkName: '.link-name-input',
         linkURL: '.url-input',
-        submitLink: '.submit-link'
+        submitLink: '.submit-link',
+        backButton: '.back-button',
+        addNewTodo: '.add-todo-task',
+        todoInputField: '.new-todo-task',
+        todoInputContainer: '.task-input',
+        noTodos: '.no-todos',
+        todoTask: '.todo-tasks',
+        todoToday: '.todo-today'
     };
 
     const userObject = {
@@ -138,6 +203,13 @@ const UIController = (() => {
             document.querySelector(DOMElements.addLink).classList.add('show');
         },
 
+        quitNewLinkBox: () => {
+            document.querySelector(DOMElements.addLink).classList.remove('show');
+            document.querySelector(DOMElements.addLink).classList.add('no-show');
+            document.querySelector(DOMElements.linkBox).classList.remove('no-show');
+            document.querySelector(DOMElements.linkBox).classList.add('show');
+        },
+
         linkInput: () => {
             return {
                 linkName: document.querySelector(DOMElements.linkName).value,
@@ -145,8 +217,99 @@ const UIController = (() => {
             }
         },
 
-        disableSubmitButton: () => {
-            document.querySelector(DOMElements.submitLink).setAttribute('disabled');
+        emptyLinkBoxFields: () => {
+            document.querySelector(DOMElements.linkName).value = '';
+            document.querySelector(DOMElements.linkURL).value = '';
+        },
+
+        displayLinkItem: (link, name) => {
+            const html = `<div class="link">
+            <svg
+              class="link-icon"
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 16 16"
+              class="bi bi-link-45deg"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"
+              />
+              <path
+                d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"
+              />
+            </svg>
+            <p class="link-item">
+              <a
+                href="http://%link%/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="the-link"
+                >%name%</a
+              >
+            </p>
+          </div>`;
+
+            let newHtml = html.replace('%name%', name);
+
+            if (link.includes('http://')) {
+                let newLink = link.replace("http://", '');
+                newHtml = newHtml.replace('%link%', newLink);
+            } else
+                newHtml = newHtml.replace('%link%', link);
+
+            document.querySelector(DOMElements.newLinkButton).insertAdjacentHTML('beforebegin', newHtml);
+        },
+
+        displayTodoBox: () => {
+            document.querySelector(DOMElements.todoContainer).classList.toggle('show');
+            document.querySelector(DOMElements.todoContainer).classList.toggle('no-show');
+            document.querySelector(DOMElements.todoInputField).style.visibility = "hidden";
+        },
+
+        inputTodo: () => {
+            document.querySelector(DOMElements.todoInputField).style.visibility = "visible";
+            document.querySelector(DOMElements.todoInputField).focus();
+            document.querySelector(DOMElements.noTodos).style.display = "none";
+            document.querySelector(DOMElements.todoContainer).style = "min-height: 7em";
+        },
+
+        todoInput: () => {
+            return {
+                todoTask: document.querySelector(DOMElements.todoInputField).value
+            }
+        },
+
+        displayTodoItem: (todo) => {
+
+            console.log("YEAH I GOT A TODO AND ITS ACTUALLY " + todo)
+            const html = `<div class="todo-tasks">
+            <img
+              src="/icons/checkbox.png"
+              alt="Todo Checkbox"
+              class="finish-task"
+            />
+            <img
+              src="/icons/check.png"
+              alt="Completed Todo"
+              class="finished-task"
+            />
+            <div class="todo-task">%todoItem%</div>
+            <img
+              src="/icons/cancel.png"
+              alt="Cancel Task"
+              class="remove-task"
+            />
+          </div>`;
+
+            const newHtml = html.replace("%todoItem%", todo);
+
+            document.querySelector(DOMElements.todoInputContainer).insertAdjacentHTML("beforebegin", newHtml);
+
+            document.querySelector(DOMElements.todoTask).style.display = "flex";
+
+            document.querySelector(DOMElements.todoInputField).value = "";
         }
     }
 })();
@@ -197,10 +360,30 @@ const mainController = ((dataCtrl, UICtrl) => {
         document.querySelector(domElements.linkButton).addEventListener('click', openLinkBox);
 
         //Add New Link
-        document.querySelector(domElements.newLink).addEventListener('click', addNewLink);
+        document.querySelector(domElements.newLinkButton).addEventListener('click', addNewLink);
 
         //Create new link
-        document.querySelector(domElements.submitLink).addEventListener('click', createNewLink)
+        document.querySelector(domElements.submitLink).addEventListener('click', createNewLink);
+
+        //Back Button
+        document.querySelector(domElements.backButton).addEventListener('click', () => {
+            UICtrl.quitNewLinkBox();
+        });
+
+        //Listen For Todo Button
+        document.querySelector(domElements.todoButton).addEventListener('click', () => {
+            UICtrl.displayTodoBox();
+        });
+
+        //Add todo Button
+        document.querySelector(domElements.addNewTodo).addEventListener('click', () => {
+            UICtrl.inputTodo();
+        });
+
+        //Add new todo
+        document.querySelector(domElements.todoInputField).addEventListener('keypress', addTodo);
+
+
     };
 
     //Username Function
@@ -281,22 +464,40 @@ const mainController = ((dataCtrl, UICtrl) => {
 
     const createNewLink = () => {
         // Get User Input 
-        const linkInformation = UICtrl.linkInput();
-        console.log(linkInformation);
+        if (UICtrl.linkInput().linkName && UICtrl.linkInput().linkURL) {
+            const linkInformation = UICtrl.linkInput();
 
-        //Display Link box
+            //Add Information to a data structure 
+            dataCtrl.newLink(linkInformation.linkName, linkInformation.linkURL);
 
+            //Empty Fields
+            UICtrl.emptyLinkBoxFields();
 
-        // openLinkBox();
+            //Return to Link Box
+            UICtrl.quitNewLinkBox();
+
+            //Display to the UI
+            UICtrl.displayLinkItem(linkInformation.linkURL, linkInformation.linkName);
+        };
     };
 
-    //Listen For Todo Button
-    document.querySelector(domElements.todoButton).addEventListener('click', () => {
-        //Display Todo Container
-        document.querySelector(domElements.todoContainer).classList.toggle('show');
-        document.querySelector(domElements.todoContainer).classList.toggle('no-show');
+    const addTodo = event => {
 
-    });
+        if (event.key === "Enter") {
+
+            UICtrl.inputTodo();
+            //Get User Input
+            const userInputTodo = UICtrl.todoInput();
+
+            console.log(userInputTodo);
+
+            //Add to data structure 
+            dataCtrl.newTodoItem(userInputTodo.todoTask);
+
+            //Display to the UI
+            UICtrl.displayTodoItem(userInputTodo.todoTask);
+        };
+    };
 
     return {
         init: () => {
