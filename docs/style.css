@@ -93,8 +93,8 @@ UPPER SECTION
 LINK ITEMS
 ****************/
 .box-one {
-  width: 13.7em;
-  height: 8.125em;
+  min-width: 13.7em;
+  min-height: 8.125em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -508,7 +508,10 @@ BOTTOM SECTION
   bottom: 2em;
   right: 1em;
   width: 20em;
-  height: 16em; /*Find a way to auto adjust height*/
+  min-height: 16em; /*Find a way to auto adjust height*/
+  max-height: 60em;
+  overflow-y: scroll;
+  /* overflow: scroll; */
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -564,9 +567,10 @@ BOTTOM SECTION
 }
 
 .todo-tasks {
-  display: none; /*Switch to display flex*/
+  display: flex; /*Switch to display flex*/
   align-items: center;
-  margin: 1em;
+  margin-bottom: 0.5em;
+  margin-left: 1em;
 }
 
 .todo-task {
