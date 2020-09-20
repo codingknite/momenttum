@@ -19,7 +19,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: url(/docs/images/img-2.jfif);
+  background: url(img-2.jfif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
