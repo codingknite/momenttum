@@ -691,13 +691,13 @@ TABLETS
 DISPLAY TIME SECTION
 **********************/
 
-  /* main {
+  main {
     height: 105vh;
-  } */
+  }
 
-  /* .content {
+  .content {
     height: 105vh;
-  } */
+  }
 
   .time-container {
     height: 70vh;
