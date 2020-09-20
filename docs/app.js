@@ -145,8 +145,8 @@ const UIController = (() => {
             return DOMElements;
         },
 
-        displayUserName: (name) => {
-            document.querySelector(DOMElements.greetingAfter).textContent = `Good afternoon, ${name}.`;
+        displayUserName: (name, partOfDay) => {
+            document.querySelector(DOMElements.greetingAfter).textContent = `Good ${partOfDay}, ${name}.`;
             document.querySelector(DOMElements.greetingBefore).classList.toggle('no-display');
             document.querySelector(DOMElements.greetingAfter).classList.toggle('no-display');
             document.querySelector(DOMElements.greetingAfter).classList.add('display');
@@ -449,12 +449,7 @@ const mainController = ((dataCtrl, UICtrl) => {
         //Add todo Button
         document.querySelector(domElements.addNewTodo).addEventListener('click', () => {
             UICtrl.inputTodo();
-            // else {
-            //     document.querySelector(domElements.todoInputField).style.visibility = "hidden";
-            //     // document.querySelector(DOMElements.todoInputField).focus();
-            //     document.querySelector(domElements.noTodos).style.display = "flex";
-            //     // document.querySelector(DOMElements.todoContainer).style = "min-height: 5em";
-            // }
+
         });
 
         //Add new todo
@@ -464,36 +459,22 @@ const mainController = ((dataCtrl, UICtrl) => {
         document.querySelector(domElements.todoContainer).addEventListener('click', deleteTodoItem);
     };
 
-    //Username Function
-    const addUserName = event => {
-        if (event.key === 'Enter') {
-
-            const userNameValue = document.querySelector(domElements.username).value;
-            if (userNameValue) {
-                const userName = userNameValue;
-                //3. Display username on the UI
-                UICtrl.displayUserName(userName);
-            };
-        };
-    };
-
-    //User focus function
-    const addUserFocus = event => {
-        if (event.key === "Enter") {
-
-            const userFocusValue = document.querySelector(domElements.userfocus).value;
-            if (userFocusValue) {
-                const userFocus = userFocusValue;
-                //3. Display username on the UI
-                UICtrl.displayUserFocus(userFocus);
-            };
-        };
-    };
-
     //Get the time
     const dateObject = new Date();
     const currentHour = dateObject.getHours();
     let currentMinute = dateObject.getMinutes();
+
+    let partOfDay;
+
+    if (currentHour >= 0 & currentHour <= 12) {
+        partOfDay = "morning";
+    } else if (currentHour >= 13 && currentHour <= 17) {
+        partOfDay = "afternoon";
+    } else {
+        partOfDay = "evening";
+    };
+
+
 
     //Display time to the UI
     if (currentMinute.length !== 2) {
@@ -509,6 +490,32 @@ const mainController = ((dataCtrl, UICtrl) => {
 
         //Display percentage
         UICtrl.displayTimeInPercentage(percentage);
+    };
+
+    //Username Function
+    const addUserName = event => {
+        if (event.key === 'Enter') {
+
+            const userNameValue = document.querySelector(domElements.username).value;
+            if (userNameValue) {
+                const userName = userNameValue;
+                //3. Display username on the UI
+                UICtrl.displayUserName(userName, partOfDay);
+            };
+        };
+    };
+
+    //User focus function
+    const addUserFocus = event => {
+        if (event.key === "Enter") {
+
+            const userFocusValue = document.querySelector(domElements.userfocus).value;
+            if (userFocusValue) {
+                const userFocus = userFocusValue;
+                //3. Display username on the UI
+                UICtrl.displayUserFocus(userFocus);
+            };
+        };
     };
 
     //Links box

@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   user-select: none;
+  outline: 0;
   font-size: 1em;
 }
 
