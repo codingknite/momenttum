@@ -1,26 +1,21 @@
 const dataController = (() => {
 
-    // Don't use functions for classes
-    // Use js classes
-    // class Link {
-    //        constructor(id, linkName, linkAddress) {
-    //              this.id = id;
-    //              this.linkName = linkName;
-    //              this.linkAddress = linkAddress;
-   //          }
-    // }
-    const Link = function (id, linkName, linkAddress) {
-        this.id = id;
-        this.linkName = linkName;
-        this.linkAddress = linkAddress;
-    };
 
-    // ES6 Classes (class)
-    const Todos = function (id, description) {
-        this.id = id;
-        this.description = description;
+    class Link {
+        constructor(id, linkName, linkAddress) {
+            this.id = id;
+            this.linkName = linkName;
+            this.linkAddress = linkAddress;
+        }
     }
-    
+
+    class Todos {
+        constructor(id, description) {
+            this.id = id;
+            this.description;
+        }
+    }
+
     const data = {
         allItems: {
             links: [],
@@ -130,8 +125,7 @@ const UIController = (() => {
     }
 
     return {
-        // Change this name to getDOMElements so we don't get off the standards of getters and setters
-        returnDomElements: () => {
+        getDomElements: () => {
             return DOMElements;
         },
 
@@ -339,11 +333,10 @@ const UIController = (() => {
     }
 })();
 
-// There's an extra "(" here
+
 const mainController = ((dataCtrl, UICtrl) => {
 
-    
-    const domElements = UICtrl.returnDomElements();
+    const domElements = UICtrl.getDomElements();
 
     //Initialisation Function
     const initFunction = () => {
@@ -417,11 +410,9 @@ const mainController = ((dataCtrl, UICtrl) => {
     //Username Function
     const addUserName = event => {
         if (event.key === 'Enter') {
-            // Why do you even need an object? An object is supposed to contain multiple information, if you just need the name then make it a variable.
-            const userNameObject = {
-                name: document.querySelector(domElements.username).value
-            };
-            if (userNameObject.name) {
+
+            const userNameValue = document.querySelector(domElements.username).value;
+            if (userNameValue) {
                 const userName = userNameObject.name;
                 //3. Display username on the UI
                 UICtrl.displayUserName(userName);
@@ -432,11 +423,9 @@ const mainController = ((dataCtrl, UICtrl) => {
     //User focus function
     const addUserFocus = event => {
         if (event.key === "Enter") {
-            // Same here, I don't think you need an object. This should be a regular variable
-            const userFocusObject = {
-                focus: document.querySelector(domElements.userfocus).value
-            };
-            if (userFocusObject.focus) {
+
+            const userFocusValue = document.querySelector(domElements.userfocus).value;
+            if (userFocusValue) {
                 const userFocus = userFocusObject.focus;
                 //3. Display username on the UI
                 UICtrl.displayUserFocus(userFocus);
@@ -444,26 +433,14 @@ const mainController = ((dataCtrl, UICtrl) => {
         };
     };
 
-    // Dont make functions to call functions that are already shorted. completeFocus is already up there as an utility, you don't need to re-wrap it. Too many calls at a low level
-    // and makes your code less readable and larger
     //Complete user focus
-    const completeUserFocus = () => {
-        UICtrl.completeFocus();
-    };
+    UICtrl.completeFocus();
 
-    // Dont make functions to call functions that are already shorted. completeFocus is already up there as an utility, you don't need to re-wrap it. Too many calls at a low level
-    // and makes your code less readable and larger
     //Delete user focus
-    const deleteFocus = () => {
-        UICtrl.eraseFocus();
-    }
+    UICtrl.eraseFocus();
 
-    
-    // Dont make functions to call functions that are already shorted. completeFocus is already up there as an utility, you don't need to re-wrap it. Too many calls at a low level
-    // and makes your code less readable and larger
-    const addNewFocus = () => {
-        UICtrl.addFocus();
-    };
+    //Add Focus 
+    UICtrl.addFocus();
 
     //Get the time
     const dateObject = new Date();
@@ -548,8 +525,6 @@ const mainController = ((dataCtrl, UICtrl) => {
 
             //Remove Item from data structure
             dataCtrl.removeTask(taskToRemove);
-
-
 
         };
         //if button pressed is delete

@@ -12,7 +12,7 @@ USER INTERFACE
 
 main {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .content {
@@ -24,7 +24,7 @@ main {
   background-position: center;
   background-size: cover;
   max-width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 :root {
@@ -508,10 +508,8 @@ BOTTOM SECTION
   bottom: 2em;
   right: 1em;
   width: 20em;
-  min-height: 16em; /*Find a way to auto adjust height*/
+  min-height: 15em;
   max-height: 60em;
-  /* overflow-y: scroll; */
-  /* overflow: scroll; */
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -630,6 +628,10 @@ Large Screens
     left: 2em;
   }
 
+  .more-button {
+    visibility: visible;
+  }
+
   /*******************
   DISPLAY FOCUS SECTION
 ********************/
@@ -688,16 +690,15 @@ TABLETS
 DISPLAY TIME SECTION
 **********************/
 
-  main {
+  /* main {
     height: 105vh;
-  }
+  } */
 
-  .content {
+  /* .content {
     height: 105vh;
-  }
+  } */
 
   .time-container {
-    /* background: crimson; */
     height: 70vh;
   }
 
@@ -824,10 +825,6 @@ DISPLAY TIME SECTION
     font-size: 6rem;
   }
 
-  .time-percentage {
-    display: none;
-  }
-
   .show-percentage {
     outline: none;
     width: 34vw;
@@ -937,7 +934,6 @@ DISPLAY FOCUS SECTION
   .todo-container {
     right: 1em;
     width: 15em;
-    height: 15em; /*Find a way to auto adjust height*/
     background: rgb(5, 5, 5);
   }
 }
