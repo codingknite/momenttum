@@ -12,7 +12,7 @@ const dataController = (() => {
     class Todos {
         constructor(id, description) {
             this.id = id;
-            this.description;
+            this.description = description;
         }
     }
 
@@ -58,20 +58,35 @@ const dataController = (() => {
 
             const newTodo = new Todos(todoID, todoDescription);
             data.allItems.todos.push(newTodo);
-            return newTodo;
+            return todoID;
         },
 
-        removeTask: taskName => {
+        getItemID: todo => {
+            let ID;
             for (const key in data.allItems.todos) {
-
-                if (data.allItems.todos[key].description === taskName) {
-                    const index = data.allItems.todos[key].id;
-                    data.allItems.todos.splice(index, 1);
+                if (data.allItems.todos[key].description === todo) {
+                    ID = data.allItems.todos[key].id;
                 };
             };
+
+            return ID;
+        },
+
+        deleteTask: taskName => {
+            let index;
+            for (const key in data.allItems.todos) {
+                if (data.allItems.todos[key].description === taskName) {
+                    index = data.allItems.todos.indexOf(data.allItems.todos[key]);
+                };
+            };
+            data.allItems.todos.splice(index, 1);
         },
         test: () => {
             return data.allItems;
+        },
+
+        getTodoLength: () => {
+            return data.allItems.todos.length;
         }
     };
 })();
@@ -117,7 +132,8 @@ const UIController = (() => {
         todoItem: '.todo-task',
         todoToday: '.todo-today',
         todoItemsContainer: '.todo-items',
-        removeTaskButton: '.remove-task'
+        deleteTaskButton: '.remove-task',
+        finishTask: '.finish-task'
     };
 
     const userObject = {
@@ -182,8 +198,8 @@ const UIController = (() => {
             document.querySelector(DOMElements.addNewFocus).classList.add('hidden-icon');
             document.querySelector(DOMElements.completeFocus).src = "/icons/checkbox.png";
             //Add hover effect again
-            document.querySelector(domElements.completeFocus).classList.remove('show');
-            document.querySelector(domElements.completeFocus).classList.add('no-show');
+            document.querySelector(DOMElements.completeFocus).classList.remove('show');
+            document.querySelector(DOMElements.completeFocus).classList.add('no-show');
         },
 
         displayTime: (hour, minute) => {
@@ -282,28 +298,42 @@ const UIController = (() => {
             document.querySelector(DOMElements.newLinkButton).insertAdjacentHTML('beforebegin', newHtml);
         },
 
-        displayTodoBox: () => {
-            document.querySelector(DOMElements.todoContainer).classList.toggle('show');
-            document.querySelector(DOMElements.todoContainer).classList.toggle('no-show');
-            document.querySelector(DOMElements.todoInputField).style.visibility = "hidden";
+        displayTodoBox: arrayLength => {
+            if (arrayLength === 0) {
+                document.querySelector(DOMElements.todoContainer).classList.toggle('show');
+                document.querySelector(DOMElements.todoContainer).classList.toggle('no-show');
+                document.querySelector(DOMElements.todoInputField).style.visibility = "hidden";
+                document.querySelector(DOMElements.noTodos).style.display = "flex";
+                document.querySelector(DOMElements.todoContainer).style = "min-height: 15em";
+            } else {
+                document.querySelector(DOMElements.todoContainer).classList.toggle('show');
+                document.querySelector(DOMElements.todoContainer).classList.toggle('no-show');
+
+                if (document.querySelector(DOMElements.todoContainer).classList.contains('show')) {
+                    document.querySelector(DOMElements.todoInputField).style.visibility = "visible";
+                    document.querySelector(DOMElements.todoInputField).focus();
+                } else {
+                    document.querySelector(DOMElements.todoInputField).style.visibility = "hidden";
+                    document.querySelector(DOMElements.todoInputField).focus();
+                };
+            };
         },
 
         inputTodo: () => {
             document.querySelector(DOMElements.todoInputField).style.visibility = "visible";
             document.querySelector(DOMElements.todoInputField).focus();
             document.querySelector(DOMElements.noTodos).style.display = "none";
-            document.querySelector(DOMElements.todoContainer).style = "min-height: 7em";
+            document.querySelector(DOMElements.todoContainer).style = "min-height: 5em";
         },
 
         todoInput: () => {
-            return {
-                todoTask: document.querySelector(DOMElements.todoInputField).value
-            }
+            const todoTask = document.querySelector(DOMElements.todoInputField).value;
+            return todoTask;
         },
 
-        displayTodoItem: (todo) => {
+        displayTodoItem: (todo, id) => {
 
-            const html = `<div class="todo-tasks">
+            const html = `<div class="todo-tasks" id="item-%ID%">
             <img
               src="/icons/checkbox.png"
               alt="Todo Checkbox"
@@ -322,13 +352,27 @@ const UIController = (() => {
             />
           </div>`;
 
-            const newHtml = html.replace("%todoItem%", todo);
+            let newHtml = html.replace("%todoItem%", todo);
+            newHtml = newHtml.replace('%ID%', id);
 
             document.querySelector(DOMElements.todoInputContainer).insertAdjacentHTML("beforebegin", newHtml);
 
             document.querySelector(DOMElements.todoTask).style.display = "flex";
 
             document.querySelector(DOMElements.todoInputField).value = "";
+        },
+
+        deleteTaskFromUI: id => {
+            const element = document.getElementById(id);
+            element.parentNode.removeChild(element);
+        },
+
+        completeTask: (task, id) => {
+            // //Change Icon to finished icon
+            document.getElementById(id).querySelector(DOMElements.finishTask).src = "/icons/check.png";
+
+            //Strikethrough Task
+            document.getElementById(id).querySelector(DOMElements.todoItem).innerHTML = '<p><s>' + task + '</s></p>';
         }
     }
 })();
@@ -358,13 +402,19 @@ const mainController = ((dataCtrl, UICtrl) => {
 
 
         //Complete Focus 
-        document.querySelector(domElements.completeFocus).addEventListener('click', completeUserFocus);
+        document.querySelector(domElements.completeFocus).addEventListener('click', () => {
+            UICtrl.completeFocus();
+        });
 
         //Delete Focus
-        document.querySelector(domElements.cancelTask).addEventListener('click', deleteFocus)
+        document.querySelector(domElements.cancelTask).addEventListener('click', () => {
+            UICtrl.eraseFocus();
+        });
 
         //Add New Focus 
-        document.querySelector(domElements.addNewFocus).addEventListener('click', addNewFocus);
+        document.querySelector(domElements.addNewFocus).addEventListener('click', () => {
+            UICtrl.addFocus();
+        });
 
         //Menu Button
         document.querySelector(domElements.menuButton).addEventListener('click', () => {
@@ -391,12 +441,20 @@ const mainController = ((dataCtrl, UICtrl) => {
 
         //Listen For Todo Button
         document.querySelector(domElements.todoButton).addEventListener('click', () => {
-            UICtrl.displayTodoBox();
+            const todoArrayLength = dataCtrl.getTodoLength();
+
+            UICtrl.displayTodoBox(todoArrayLength);
         });
 
         //Add todo Button
         document.querySelector(domElements.addNewTodo).addEventListener('click', () => {
             UICtrl.inputTodo();
+            // else {
+            //     document.querySelector(domElements.todoInputField).style.visibility = "hidden";
+            //     // document.querySelector(DOMElements.todoInputField).focus();
+            //     document.querySelector(domElements.noTodos).style.display = "flex";
+            //     // document.querySelector(DOMElements.todoContainer).style = "min-height: 5em";
+            // }
         });
 
         //Add new todo
@@ -404,7 +462,6 @@ const mainController = ((dataCtrl, UICtrl) => {
 
         //Delete Todo Items
         document.querySelector(domElements.todoContainer).addEventListener('click', deleteTodoItem);
-
     };
 
     //Username Function
@@ -413,7 +470,7 @@ const mainController = ((dataCtrl, UICtrl) => {
 
             const userNameValue = document.querySelector(domElements.username).value;
             if (userNameValue) {
-                const userName = userNameObject.name;
+                const userName = userNameValue;
                 //3. Display username on the UI
                 UICtrl.displayUserName(userName);
             };
@@ -426,21 +483,12 @@ const mainController = ((dataCtrl, UICtrl) => {
 
             const userFocusValue = document.querySelector(domElements.userfocus).value;
             if (userFocusValue) {
-                const userFocus = userFocusObject.focus;
+                const userFocus = userFocusValue;
                 //3. Display username on the UI
                 UICtrl.displayUserFocus(userFocus);
             };
         };
     };
-
-    //Complete user focus
-    UICtrl.completeFocus();
-
-    //Delete user focus
-    UICtrl.eraseFocus();
-
-    //Add Focus 
-    UICtrl.addFocus();
 
     //Get the time
     const dateObject = new Date();
@@ -498,44 +546,43 @@ const mainController = ((dataCtrl, UICtrl) => {
     const addTodo = event => {
 
         if (event.key === "Enter") {
-
             UICtrl.inputTodo();
             //Get User Input
             const userInputTodo = UICtrl.todoInput();
 
-            if (userInputTodo.todoTask) {
+            if (userInputTodo) {
                 //Add to data structure 
-                dataCtrl.newTodoItem(userInputTodo.todoTask);
+                dataCtrl.newTodoItem(userInputTodo);
+
+                //Get Item ID
+                const todoID = dataCtrl.getItemID(userInputTodo);
 
                 //Display to the UI
-                UICtrl.displayTodoItem(userInputTodo.todoTask);
+                UICtrl.displayTodoItem(userInputTodo, todoID);
             };
         };
     };
 
     const deleteTodoItem = event => {
-
-
         const targetClassList = Array.from(event.target.classList);
-
         const nodeChildren = Array.from(event.target.parentNode.children);
+        const selectorID = event.target.parentNode.id;
 
         if (targetClassList.includes('remove-task')) {
             const taskToRemove = nodeChildren[2].innerText;
 
-            //Remove Item from data structure
-            dataCtrl.removeTask(taskToRemove);
+            //Delete Item from data structure
+            dataCtrl.deleteTask(taskToRemove);
 
+            //Delete Item from the UI
+            UICtrl.deleteTaskFromUI(selectorID)
+        } else if (targetClassList.includes('finish-task')) {
+
+            const taskToComplete = nodeChildren[2].innerText;
+            //Mark Task Completed
+            UICtrl.completeTask(taskToComplete, selectorID);
         };
-        //if button pressed is delete
-        // if (event.target.classList.includes(domElements.removeTaskButton)) {
-        //     console.log("YEP, YA FOUND ME")
-        // }
-
-        //Delete todo from data structure
-
-        //Dlete todo from UI
-    }
+    };
 
     return {
         init: () => {
