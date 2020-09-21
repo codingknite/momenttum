@@ -1,3 +1,4 @@
+// Let's move this `dataController` to a different file, so in the same folder where the `app.js` is, create 'data-controller.js`
 const dataController = (() => {
 
 
@@ -91,7 +92,7 @@ const dataController = (() => {
     };
 })();
 
-
+// Move it to a different file as well. (`UIController`)
 const UIController = (() => {
 
     const DOMElements = {
@@ -136,6 +137,7 @@ const UIController = (() => {
         finishTask: '.finish-task'
     };
 
+    // Remove this, it's unecessary as far as i can see
     const userObject = {
 
     }
