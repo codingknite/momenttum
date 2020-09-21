@@ -690,15 +690,6 @@ TABLETS
   /*********************
 DISPLAY TIME SECTION
 **********************/
-
-  main {
-    height: 105vh;
-  }
-
-  .content {
-    height: 105vh;
-  }
-
   .time-container {
     height: 70vh;
   }
