@@ -466,9 +466,9 @@ const mainController = ((dataCtrl, UICtrl) => {
 
     let partOfDay;
 
-    if (currentHour >= 0 & currentHour <= 12) {
+    if (currentHour >= 0 & currentHour < 12) {
         partOfDay = "morning";
-    } else if (currentHour >= 13 && currentHour <= 17) {
+    } else if (currentHour >= 13 && currentHour < 17) {
         partOfDay = "afternoon";
     } else {
         partOfDay = "evening";
