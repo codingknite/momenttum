@@ -57,7 +57,7 @@ const UIController = (() => {
 
         completeFocus: () => {
             //Change Icon to finished icon
-            document.querySelector(DOMElements.completeFocus).src = "check.png";
+            document.querySelector(DOMElements.completeFocus).src = "Icons/check.png";
             //Remove Hover effect
             document.querySelector(DOMElements.completeFocus).classList.remove('no-show');
             document.querySelector(DOMElements.completeFocus).classList.add('show');
@@ -93,7 +93,7 @@ const UIController = (() => {
             document.querySelector(DOMElements.cancelTask).classList.add('current-icon');
             document.querySelector(DOMElements.addNewFocus).classList.remove('current-icon');
             document.querySelector(DOMElements.addNewFocus).classList.add('hidden-icon');
-            document.querySelector(DOMElements.completeFocus).src = "checkbox.png";
+            document.querySelector(DOMElements.completeFocus).src = "Icons/checkbox.png";
             //Add hover effect again
             document.querySelector(DOMElements.completeFocus).classList.remove('show');
             document.querySelector(DOMElements.completeFocus).classList.add('no-show');
@@ -232,18 +232,18 @@ const UIController = (() => {
 
             const html = `<div class="todo-tasks" id="item-%ID%">
             <img
-              src="checkbox.png"
+              src="Icons/check.png"
               alt="Todo Checkbox"
               class="finish-task"
             />
             <img
-              src="check.png"
+              src="Icons/check.png"
               alt="Completed Todo"
               class="finished-task"
             />
             <div class="todo-task">%todoItem%</div>
             <img
-              src="cancel.png"
+              src="Icons/cancel.png"
               alt="Cancel Task"
               class="remove-task"
             />
@@ -266,7 +266,7 @@ const UIController = (() => {
 
         completeTask: (task, id) => {
             // //Change Icon to finished icon
-            document.getElementById(id).querySelector(DOMElements.finishTask).src = "check.png";
+            document.getElementById(id).querySelector(DOMElements.finishTask).src = "Icons/check.png";
 
             //Strikethrough Task
             document.getElementById(id).querySelector(DOMElements.todoItem).innerHTML = '<p><s>' + task + '</s></p>';
