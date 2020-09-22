@@ -1,3 +1,4 @@
+// put the keyword `export` before const. so it will look like this: `export const UIController`
 const UIController = (() => {
 
     const DOMElements = {
