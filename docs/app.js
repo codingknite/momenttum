@@ -1,3 +1,6 @@
+import { dataController } from './data-controller.js';
+import { UIController } from './UIController.js';
+
 const mainController = ((dataCtrl, UICtrl) => {
 
     const domElements = UICtrl.getDomElements();

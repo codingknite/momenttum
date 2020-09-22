@@ -1,4 +1,4 @@
-const dataController = (() => {
+export const dataController = (() => {
 
 
     class Link {

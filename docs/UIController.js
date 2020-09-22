@@ -1,4 +1,4 @@
-const UIController = (() => {
+export const UIController = (() => {
 
     const DOMElements = {
         username: '.user-name',
