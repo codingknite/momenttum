@@ -1,5 +1,5 @@
-# scavenger
+# Momenttum
 
-Scavenger is Todo List Application made as a clone of [Momentum](https://momentumdash.com) but mobile responsive.
+Momenttum is a productivity application made as a clone of [Momentum](https://momentumdash.com) but mobile responsive.
 
-Watch it live [here](https://mojpm.github.io/scavenger)
+Watch it live [here](https://mojpm.github.io/momenttum)
